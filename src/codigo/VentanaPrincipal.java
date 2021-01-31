@@ -40,6 +40,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
+
         BotonApagar.setText("Apagar");
         BotonApagar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -54,14 +56,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        BotonFecha.setText("Añadir album");
+        BotonFecha.setText("Añadir fecha");
         BotonFecha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonFechaActionPerformed(evt);
             }
         });
 
-        BotonFechaBorrar.setText("Borrar album");
+        BotonFechaBorrar.setText("Borrar fecha");
         BotonFechaBorrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonFechaBorrarActionPerformed(evt);
@@ -140,24 +142,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void BotonFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonFechaActionPerformed
         gestor.aniadirColumna();
-        if (gestor.aniadirColumna() == 0) {
-            System.out.println("Columna fecha añadida correctamente");
-            BotonFecha.setEnabled(false);
-            BotonFechaBorrar.setEnabled(true);
-        } else {
-            System.out.println("Error al introducir la consulta añadir columna fecha");
-        }
+        BotonFecha.setEnabled(false);
+        BotonFechaBorrar.setEnabled(true);
+
     }//GEN-LAST:event_BotonFechaActionPerformed
 
     private void BotonFechaBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonFechaBorrarActionPerformed
         gestor.borrarColumna();
-        if (gestor.borrarColumna() == 0) {
-            System.out.println("Columna fecha eliminada correctamente");
-            BotonFechaBorrar.setEnabled(false);
-            BotonFecha.setEnabled(true);
-        } else {
-            System.out.println("Error al eliminar la columna fecha");
-        }
+        BotonFechaBorrar.setEnabled(false);
+        BotonFecha.setEnabled(true);
+
+
     }//GEN-LAST:event_BotonFechaBorrarActionPerformed
 
     /**

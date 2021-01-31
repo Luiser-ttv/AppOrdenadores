@@ -34,6 +34,11 @@
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JPanel" name="jPanel1">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="66" green="66" red="66" type="rgb"/>
+        </Property>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -85,7 +90,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="BotonFecha">
           <Properties>
-            <Property name="text" type="java.lang.String" value="A&#xf1;adir album"/>
+            <Property name="text" type="java.lang.String" value="A&#xf1;adir fecha"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonFechaActionPerformed"/>
@@ -93,7 +98,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="BotonFechaBorrar">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Borrar album"/>
+            <Property name="text" type="java.lang.String" value="Borrar fecha"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonFechaBorrarActionPerformed"/>
