@@ -19,7 +19,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public VentanaPrincipal() {
         initComponents();
         BotonApagar.setEnabled(false);
-
+        BotonFecha.setEnabled(false);
+        BotonFechaBorrar.setEnabled(false);
     }
 
     /**
@@ -35,7 +36,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         BotonApagar = new javax.swing.JButton();
         BotonEncender = new javax.swing.JButton();
         BotonFecha = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        BotonFechaBorrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,8 +55,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
 
         BotonFecha.setText("Añadir album");
+        BotonFecha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonFechaActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Borrar album");
+        BotonFechaBorrar.setText("Borrar album");
+        BotonFechaBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonFechaBorrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -69,7 +80,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BotonFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BotonFechaBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -80,7 +91,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addComponent(BotonEncender)
                     .addComponent(BotonApagar)
                     .addComponent(BotonFecha)
-                    .addComponent(jButton2))
+                    .addComponent(BotonFechaBorrar))
                 .addContainerGap(529, Short.MAX_VALUE))
         );
 
@@ -104,6 +115,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             System.out.println("Conectado a la discografica");
             BotonEncender.setEnabled(false);
             BotonApagar.setEnabled(true);
+            BotonFecha.setEnabled(true);
+            BotonFechaBorrar.setEnabled(false);
         } else {
             System.out.println("Error en la conexion de la BBDD");
 
@@ -118,10 +131,34 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             System.out.println("Conexion cerrada correctamente");
             BotonApagar.setEnabled(false);
             BotonEncender.setEnabled(true);
+            BotonFecha.setEnabled(false);
+            BotonFechaBorrar.setEnabled(false);
         } else {
             System.out.println("Error al cerrar la discorafica");
         }
     }//GEN-LAST:event_BotonApagarActionPerformed
+
+    private void BotonFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonFechaActionPerformed
+        gestor.aniadirColumna();
+        if (gestor.aniadirColumna() == 0) {
+            System.out.println("Columna fecha añadida correctamente");
+            BotonFecha.setEnabled(false);
+            BotonFechaBorrar.setEnabled(true);
+        } else {
+            System.out.println("Error al introducir la consulta añadir columna fecha");
+        }
+    }//GEN-LAST:event_BotonFechaActionPerformed
+
+    private void BotonFechaBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonFechaBorrarActionPerformed
+        gestor.borrarColumna();
+        if (gestor.borrarColumna() == 0) {
+            System.out.println("Columna fecha eliminada correctamente");
+            BotonFechaBorrar.setEnabled(false);
+            BotonFecha.setEnabled(true);
+        } else {
+            System.out.println("Error al eliminar la columna fecha");
+        }
+    }//GEN-LAST:event_BotonFechaBorrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -163,7 +200,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton BotonApagar;
     private javax.swing.JButton BotonEncender;
     private javax.swing.JButton BotonFecha;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton BotonFechaBorrar;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

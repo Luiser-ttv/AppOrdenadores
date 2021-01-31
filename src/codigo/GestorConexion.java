@@ -55,28 +55,44 @@ public class GestorConexion {
         return aux;
     }
 
-    public void aniadirColumna() {
+    public int aniadirColumna() {
 
         Statement sta;
+        int aux = -1;
+
         try {
             sta = conn1.createStatement();
             sta.executeUpdate("ALTER TABLE album ADD fecha_publicacion YEAR;");
             sta.close();
+            if (conn1 != null) {
+                return 0;
+
+            }
         } catch (SQLException ex) {
-            System.out.println("Error al introducir la consulta");
+            aux = -1;
         }
+        return aux;
     }
 
-    public void borrarColumna() {
+    public int borrarColumna() {
 
         Statement sta;
+        int aux = -1;
+
         try {
+            
             sta = conn1.createStatement();
             sta.executeUpdate("DROP table album;");
             sta.close();
+            
+            if (conn1 != null) {
+                return 0;
+
+            }
         } catch (SQLException ex) {
-            System.out.println("Error al borrar la tabla");
+            aux = -1;
         }
+        return aux;
     }
 
 }

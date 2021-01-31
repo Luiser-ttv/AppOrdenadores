@@ -46,7 +46,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="BotonFecha" min="-2" pref="144" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jButton2" min="-2" pref="144" max="-2" attributes="0"/>
+                  <Component id="BotonFechaBorrar" min="-2" pref="144" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -59,7 +59,7 @@
                       <Component id="BotonEncender" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="BotonApagar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="BotonFecha" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="BotonFechaBorrar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="529" max="32767" attributes="0"/>
               </Group>
@@ -87,11 +87,17 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="A&#xf1;adir album"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonFechaActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="BotonFechaBorrar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Borrar album"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonFechaBorrarActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
