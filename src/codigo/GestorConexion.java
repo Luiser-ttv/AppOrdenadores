@@ -56,7 +56,7 @@ public class GestorConexion {
     }
 
     public void aniadirColumna() {
-        
+
         Statement sta;
 
         try {
@@ -64,47 +64,44 @@ public class GestorConexion {
             sta.executeUpdate("ALTER TABLE album ADD fecha_publicacion YEAR;");
             sta.close();
 
-            
         } catch (SQLException ex) {
-             System.out.println("Error al introducir la consulta añadir columna fecha");
+            System.out.println("Error al introducir la consulta añadir columna fecha");
         }
-        
+
     }
 
     public void borrarColumna() {
-        
-       
+
         Statement sta;
 
         try {
-            
+
             sta = conn1.createStatement();
             sta.executeUpdate("ALTER TABLE album DROP fecha_publicacion;");
             sta.close();
-            
+
         } catch (SQLException ex) {
-          System.out.println("Error al eliminar la columna fecha");
+            System.out.println("Error al eliminar la columna fecha");
 
         }
-        
+
     }
-    
+
     public void insertarAlbum(String cancion, String autor) {
         
-       
         Statement sta;
 
         try {
-            
+
             sta = conn1.createStatement();
-            sta.executeUpdate("INSERT INTO album VALUE (" + "1" + "," + "'" + cancion + "'" + "," + "'" + autor + "'" + ");");
+            sta.executeUpdate("INSERT INTO album (titulo, autor) VALUES (" + "'" + cancion + "'" + ", " + "'" + autor + "'" + ");");
             sta.close();
-            
+
         } catch (SQLException ex) {
-          System.out.println("Error al insertar los datos");
+            System.out.println("Error al insertar los datos");
 
         }
-        
+
     }
 
 }

@@ -104,6 +104,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         BotonDatpsAlbum.setBackground(new java.awt.Color(0, 0, 0));
         BotonDatpsAlbum.setForeground(new java.awt.Color(204, 204, 204));
         BotonDatpsAlbum.setText("OK");
+        BotonDatpsAlbum.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonDatpsAlbumActionPerformed(evt);
+            }
+        });
 
         insertarDatos.setBackground(new java.awt.Color(0, 0, 0));
         insertarDatos.setForeground(new java.awt.Color(204, 204, 204));
@@ -250,13 +255,34 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void darkModeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_darkModeMousePressed
         if (darkMode.isSelected()) {
+            fondoColor.setBackground(new java.awt.Color(204, 204, 204));
             BotonEncender.setBackground(new java.awt.Color(204, 204, 204));
             BotonEncender.setForeground(new java.awt.Color(0, 0, 0));
         } else {
+            //Dark Mode
+            fondoColor.setBackground(new java.awt.Color(102, 102, 102));
+            
             BotonEncender.setBackground(new java.awt.Color(0, 0, 0));
             BotonEncender.setForeground(new java.awt.Color(204, 204, 204));
+            
+            BotonApagar.setBackground(new java.awt.Color(0, 0, 0));
+            BotonApagar.setForeground(new java.awt.Color(204, 204, 204));
+            
+            BotonFecha.setBackground(new java.awt.Color(0, 0, 0));
+            BotonFecha.setForeground(new java.awt.Color(204, 204, 204));
+            
+            BotonFechaBorrar.setBackground(new java.awt.Color(0, 0, 0));
+            BotonFechaBorrar.setForeground(new java.awt.Color(204, 204, 204));
+            
+            BotonDatpsAlbum.setBackground(new java.awt.Color(0, 0, 0));
+            BotonDatpsAlbum.setForeground(new java.awt.Color(204, 204, 204));
         }
     }//GEN-LAST:event_darkModeMousePressed
+
+    private void BotonDatpsAlbumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonDatpsAlbumActionPerformed
+        gestor.insertarAlbum(nombreCancionField.getText(), nombreAutorField.getText());
+       
+    }//GEN-LAST:event_BotonDatpsAlbumActionPerformed
 
     /**
      * @param args the command line arguments
