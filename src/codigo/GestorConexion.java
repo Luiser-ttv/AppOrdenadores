@@ -88,5 +88,23 @@ public class GestorConexion {
         }
         
     }
+    
+    public void insertarAlbum(String cancion, String autor) {
+        
+       
+        Statement sta;
+
+        try {
+            
+            sta = conn1.createStatement();
+            sta.executeUpdate("INSERT INTO album VALUE (" + "1" + "," + "'" + cancion + "'" + "," + "'" + autor + "'" + ");");
+            sta.close();
+            
+        } catch (SQLException ex) {
+          System.out.println("Error al insertar los datos");
+
+        }
+        
+    }
 
 }

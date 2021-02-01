@@ -21,6 +21,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         BotonApagar.setEnabled(false);
         BotonFecha.setEnabled(false);
         BotonFechaBorrar.setEnabled(false);
+        
     }
 
     /**
@@ -32,16 +33,40 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        fondoColor = new javax.swing.JPanel();
+        darkMode = new javax.swing.JToggleButton();
         BotonApagar = new javax.swing.JButton();
         BotonEncender = new javax.swing.JButton();
         BotonFecha = new javax.swing.JButton();
         BotonFechaBorrar = new javax.swing.JButton();
+        BotonDatpsAlbum = new javax.swing.JButton();
+        insertarDatos = new javax.swing.JLabel();
+        nombreCancion = new javax.swing.JLabel();
+        nombreAutor = new javax.swing.JLabel();
+        insertarFecha = new javax.swing.JLabel();
+        nombreCancionField = new javax.swing.JTextField();
+        nombreAutorField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
+        fondoColor.setBackground(new java.awt.Color(102, 102, 102));
 
+        darkMode.setIcon(new javax.swing.ImageIcon(getClass().getResource("/codigo/light_16.png"))); // NOI18N
+        darkMode.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        darkMode.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/codigo/dark_16.png"))); // NOI18N
+        darkMode.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                darkModeMousePressed(evt);
+            }
+        });
+        darkMode.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                darkModeActionPerformed(evt);
+            }
+        });
+
+        BotonApagar.setBackground(new java.awt.Color(0, 0, 0));
+        BotonApagar.setForeground(new java.awt.Color(204, 204, 204));
         BotonApagar.setText("Apagar");
         BotonApagar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -49,6 +74,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        BotonEncender.setBackground(new java.awt.Color(0, 0, 0));
+        BotonEncender.setForeground(new java.awt.Color(204, 204, 204));
         BotonEncender.setText("Encender/Actualizar");
         BotonEncender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -56,6 +83,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        BotonFecha.setBackground(new java.awt.Color(0, 0, 0));
+        BotonFecha.setForeground(new java.awt.Color(204, 204, 204));
         BotonFecha.setText("Añadir fecha");
         BotonFecha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,6 +92,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        BotonFechaBorrar.setBackground(new java.awt.Color(0, 0, 0));
+        BotonFechaBorrar.setForeground(new java.awt.Color(204, 204, 204));
         BotonFechaBorrar.setText("Borrar fecha");
         BotonFechaBorrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,42 +101,100 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        BotonDatpsAlbum.setBackground(new java.awt.Color(0, 0, 0));
+        BotonDatpsAlbum.setForeground(new java.awt.Color(204, 204, 204));
+        BotonDatpsAlbum.setText("OK");
+
+        insertarDatos.setBackground(new java.awt.Color(0, 0, 0));
+        insertarDatos.setForeground(new java.awt.Color(204, 204, 204));
+        insertarDatos.setText("Insertar Datos en Album");
+        insertarDatos.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        insertarDatos.setOpaque(true);
+
+        nombreCancion.setText("Cancion:");
+
+        nombreAutor.setText("Autor:");
+
+        insertarFecha.setBackground(new java.awt.Color(0, 0, 0));
+        insertarFecha.setForeground(new java.awt.Color(204, 204, 204));
+        insertarFecha.setText("Añadir/Borrar fecha");
+        insertarFecha.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        insertarFecha.setOpaque(true);
+
+        nombreCancionField.setBackground(new java.awt.Color(0, 0, 0));
+        nombreCancionField.setForeground(new java.awt.Color(204, 204, 204));
+        nombreCancionField.setDisabledTextColor(new java.awt.Color(102, 102, 102));
+
+        nombreAutorField.setBackground(new java.awt.Color(0, 0, 0));
+        nombreAutorField.setForeground(new java.awt.Color(204, 204, 204));
+        nombreAutorField.setCaretColor(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout fondoColorLayout = new javax.swing.GroupLayout(fondoColor);
+        fondoColor.setLayout(fondoColorLayout);
+        fondoColorLayout.setHorizontalGroup(
+            fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(fondoColorLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(BotonEncender)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BotonApagar, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BotonFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BotonFechaBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(insertarFecha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(insertarDatos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BotonEncender, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(fondoColorLayout.createSequentialGroup()
+                        .addComponent(BotonFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(BotonFechaBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, fondoColorLayout.createSequentialGroup()
+                            .addComponent(BotonApagar, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(darkMode))
+                        .addGroup(fondoColorLayout.createSequentialGroup()
+                            .addComponent(nombreCancion)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(nombreCancionField, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(nombreAutor)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(nombreAutorField, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(BotonDatpsAlbum))))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        fondoColorLayout.setVerticalGroup(
+            fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(fondoColorLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BotonEncender)
                     .addComponent(BotonApagar)
+                    .addComponent(darkMode))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(insertarFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BotonFecha)
                     .addComponent(BotonFechaBorrar))
-                .addContainerGap(529, Short.MAX_VALUE))
+                .addGap(21, 21, 21)
+                .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(insertarDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nombreCancionField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nombreCancion)
+                    .addComponent(nombreAutor)
+                    .addComponent(nombreAutorField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotonDatpsAlbum))
+                .addContainerGap(426, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(fondoColor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(fondoColor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -155,6 +244,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_BotonFechaBorrarActionPerformed
 
+    private void darkModeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_darkModeActionPerformed
+       
+    }//GEN-LAST:event_darkModeActionPerformed
+
+    private void darkModeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_darkModeMousePressed
+        if (darkMode.isSelected()) {
+            BotonEncender.setBackground(new java.awt.Color(204, 204, 204));
+            BotonEncender.setForeground(new java.awt.Color(0, 0, 0));
+        } else {
+            BotonEncender.setBackground(new java.awt.Color(0, 0, 0));
+            BotonEncender.setForeground(new java.awt.Color(204, 204, 204));
+        }
+    }//GEN-LAST:event_darkModeMousePressed
+
     /**
      * @param args the command line arguments
      */
@@ -193,9 +296,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonApagar;
+    private javax.swing.JButton BotonDatpsAlbum;
     private javax.swing.JButton BotonEncender;
     private javax.swing.JButton BotonFecha;
     private javax.swing.JButton BotonFechaBorrar;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JToggleButton darkMode;
+    private javax.swing.JPanel fondoColor;
+    private javax.swing.JLabel insertarDatos;
+    private javax.swing.JLabel insertarFecha;
+    private javax.swing.JLabel nombreAutor;
+    private javax.swing.JTextField nombreAutorField;
+    private javax.swing.JLabel nombreCancion;
+    private javax.swing.JTextField nombreCancionField;
     // End of variables declaration//GEN-END:variables
 }
