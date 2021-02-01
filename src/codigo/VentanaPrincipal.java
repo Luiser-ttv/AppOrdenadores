@@ -15,13 +15,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      * Creates new form VentanaPrincipal
      */
     GestorConexion gestor = new GestorConexion();
-
+    
     public VentanaPrincipal() {
         initComponents();
         BotonApagar.setEnabled(false);
         BotonFecha.setEnabled(false);
         BotonFechaBorrar.setEnabled(false);
-        
+        salidaConsultas.setVisible(false);
     }
 
     /**
@@ -33,6 +33,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        salidaConsultas = new javax.swing.JDialog();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        salidaConsultasTexto = new javax.swing.JTextArea();
         fondoColor = new javax.swing.JPanel();
         darkMode = new javax.swing.JToggleButton();
         BotonApagar = new javax.swing.JButton();
@@ -40,12 +43,33 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         BotonFecha = new javax.swing.JButton();
         BotonFechaBorrar = new javax.swing.JButton();
         BotonDatpsAlbum = new javax.swing.JButton();
+        BotonConsultas = new javax.swing.JButton();
         insertarDatos = new javax.swing.JLabel();
         nombreCancion = new javax.swing.JLabel();
         nombreAutor = new javax.swing.JLabel();
         insertarFecha = new javax.swing.JLabel();
+        consultarDatos = new javax.swing.JLabel();
+        consultaAutorLabel = new javax.swing.JLabel();
+        consultaCancionLabel = new javax.swing.JLabel();
         nombreCancionField = new javax.swing.JTextField();
         nombreAutorField = new javax.swing.JTextField();
+        consultaCancion = new javax.swing.JTextField();
+        consultaAutor = new javax.swing.JTextField();
+
+        salidaConsultasTexto.setColumns(20);
+        salidaConsultasTexto.setRows(5);
+        jScrollPane1.setViewportView(salidaConsultasTexto);
+
+        javax.swing.GroupLayout salidaConsultasLayout = new javax.swing.GroupLayout(salidaConsultas.getContentPane());
+        salidaConsultas.getContentPane().setLayout(salidaConsultasLayout);
+        salidaConsultasLayout.setHorizontalGroup(
+            salidaConsultasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 547, Short.MAX_VALUE)
+        );
+        salidaConsultasLayout.setVerticalGroup(
+            salidaConsultasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 561, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -110,6 +134,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        BotonConsultas.setText("OK");
+        BotonConsultas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonConsultasActionPerformed(evt);
+            }
+        });
+
         insertarDatos.setBackground(new java.awt.Color(0, 0, 0));
         insertarDatos.setForeground(new java.awt.Color(204, 204, 204));
         insertarDatos.setText("Insertar Datos en Album");
@@ -125,6 +156,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         insertarFecha.setText("Añadir/Borrar fecha");
         insertarFecha.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         insertarFecha.setOpaque(true);
+
+        consultarDatos.setBackground(new java.awt.Color(0, 0, 0));
+        consultarDatos.setForeground(new java.awt.Color(204, 204, 204));
+        consultarDatos.setText("Consultar Datos");
+        consultarDatos.setAlignmentX(1.0F);
+        consultarDatos.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        consultarDatos.setOpaque(true);
+
+        consultaAutorLabel.setText("Autor:");
+
+        consultaCancionLabel.setText("Cancion:");
 
         nombreCancionField.setBackground(new java.awt.Color(0, 0, 0));
         nombreCancionField.setForeground(new java.awt.Color(204, 204, 204));
@@ -143,29 +185,43 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(insertarFecha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(insertarDatos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BotonEncender, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BotonEncender, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(consultarDatos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(fondoColorLayout.createSequentialGroup()
-                        .addComponent(BotonFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(BotonFechaBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, fondoColorLayout.createSequentialGroup()
-                            .addComponent(BotonApagar, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(darkMode))
-                        .addGroup(fondoColorLayout.createSequentialGroup()
-                            .addComponent(nombreCancion)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(fondoColorLayout.createSequentialGroup()
+                                .addComponent(BotonFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(BotonFechaBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(fondoColorLayout.createSequentialGroup()
+                                .addComponent(BotonApagar, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(darkMode))))
+                    .addGroup(fondoColorLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nombreCancion, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(consultaCancionLabel))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(nombreCancionField, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(nombreAutor)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(nombreAutorField, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(BotonDatpsAlbum))))
-                .addContainerGap(12, Short.MAX_VALUE))
+                            .addComponent(consultaCancion, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(consultaAutorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(nombreAutor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(consultaAutor, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
+                            .addComponent(nombreAutorField))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(BotonDatpsAlbum, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(BotonConsultas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(4, 4, 4)))
+                .addGap(19, 19, 19))
         );
         fondoColorLayout.setVerticalGroup(
             fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -188,7 +244,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addComponent(nombreAutor)
                     .addComponent(nombreAutorField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BotonDatpsAlbum))
-                .addContainerGap(426, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(consultarDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(consultaCancion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(consultaAutorLabel)
+                    .addComponent(consultaCancionLabel)
+                    .addComponent(consultaAutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotonConsultas))
+                .addContainerGap(373, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -215,9 +279,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             BotonFechaBorrar.setEnabled(false);
         } else {
             System.out.println("Error en la conexion de la BBDD");
-
+            
         }
-
+        
 
     }//GEN-LAST:event_BotonEncenderActionPerformed
 
@@ -245,12 +309,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         gestor.borrarColumna();
         BotonFechaBorrar.setEnabled(false);
         BotonFecha.setEnabled(true);
-
+        
 
     }//GEN-LAST:event_BotonFechaBorrarActionPerformed
 
     private void darkModeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_darkModeActionPerformed
-       
+
     }//GEN-LAST:event_darkModeActionPerformed
 
     private void darkModeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_darkModeMousePressed
@@ -281,8 +345,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void BotonDatpsAlbumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonDatpsAlbumActionPerformed
         gestor.insertarAlbum(nombreCancionField.getText(), nombreAutorField.getText());
-       
+
     }//GEN-LAST:event_BotonDatpsAlbumActionPerformed
+
+    private void BotonConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonConsultasActionPerformed
+        gestor.consulta_StatementAutor(consultaAutor.getText());
+        gestor.consulta_StatementCancion(consultaCancion.getText());
+        
+        
+    }//GEN-LAST:event_BotonConsultasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -322,17 +393,26 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonApagar;
+    private javax.swing.JButton BotonConsultas;
     private javax.swing.JButton BotonDatpsAlbum;
     private javax.swing.JButton BotonEncender;
     private javax.swing.JButton BotonFecha;
     private javax.swing.JButton BotonFechaBorrar;
+    private javax.swing.JTextField consultaAutor;
+    private javax.swing.JLabel consultaAutorLabel;
+    private javax.swing.JTextField consultaCancion;
+    private javax.swing.JLabel consultaCancionLabel;
+    private javax.swing.JLabel consultarDatos;
     private javax.swing.JToggleButton darkMode;
     private javax.swing.JPanel fondoColor;
     private javax.swing.JLabel insertarDatos;
     private javax.swing.JLabel insertarFecha;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel nombreAutor;
     private javax.swing.JTextField nombreAutorField;
     private javax.swing.JLabel nombreCancion;
     private javax.swing.JTextField nombreCancionField;
+    private javax.swing.JDialog salidaConsultas;
+    private javax.swing.JTextArea salidaConsultasTexto;
     // End of variables declaration//GEN-END:variables
 }

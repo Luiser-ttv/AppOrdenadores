@@ -7,6 +7,7 @@ package codigo;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
@@ -99,6 +100,57 @@ public class GestorConexion {
 
         } catch (SQLException ex) {
             System.out.println("Error al insertar los datos");
+
+        }
+
+    }
+    
+    public void consulta_StatementAutor(String autor) {
+        
+        Statement sta;
+
+        try {
+
+            sta = conn1.createStatement();
+            
+            String query = "SELECT * FROM album WHERE autor = '" + autor + "';";
+            ResultSet rs = sta.executeQuery(query);
+            
+            while (rs.next()) {                
+                System.out.println("Autor: " + rs.getString("autor") + ", Titulo: " + rs.getString("titulo"));
+            }
+            
+            rs.close();
+            sta.close();
+
+        } catch (SQLException ex) {
+            System.out.println("Error al consultar los datos");
+
+        }
+
+    }
+    
+    public void consulta_StatementCancion(String titulo) {
+        
+        Statement sta;
+        
+        try {   
+            
+            sta = conn1.createStatement();
+            
+            String query = "SELECT * FROM album WHERE titulo = '" + titulo + "';";
+            ResultSet rs = sta.executeQuery(query);
+            
+            while (rs.next()) {                
+                 System.out.println("\n Autor: " + rs.getString("autor") + "\n Titulo: " + rs.getString("titulo"));
+                 
+            }
+            
+            rs.close();
+            sta.close();
+
+        } catch (SQLException ex) {
+            System.out.println("Error al consultar los datos");
 
         }
 
