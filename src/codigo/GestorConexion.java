@@ -7,6 +7,7 @@ package codigo;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -89,7 +90,7 @@ public class GestorConexion {
     }
 
     public void insertarAlbum(String cancion, String autor) {
-        
+
         Statement sta;
 
         try {
@@ -104,22 +105,22 @@ public class GestorConexion {
         }
 
     }
-    
-    public void consulta_StatementAutor(String autor) {
-        
+
+    public void consultaTodo() {
+
         Statement sta;
 
         try {
 
             sta = conn1.createStatement();
-            
-            String query = "SELECT * FROM album WHERE autor = '" + autor + "';";
+
+            String query = "SELECT * FROM album autor;";
             ResultSet rs = sta.executeQuery(query);
-            
-            while (rs.next()) {                
-                System.out.println("Autor: " + rs.getString("autor") + ", Titulo: " + rs.getString("titulo"));
+
+            while (rs.next()) {
+                System.out.println("Autor: " + rs.getString("autor"));
             }
-            
+
             rs.close();
             sta.close();
 
@@ -129,28 +130,55 @@ public class GestorConexion {
         }
 
     }
-    
-    public void consulta_StatementCancion(String titulo) {
-        
+
+    public void consultaAutores(String titulo) {
+
         Statement sta;
-        
-        try {   
-            
+
+        try {
+
             sta = conn1.createStatement();
-            
+
             String query = "SELECT * FROM album WHERE titulo = '" + titulo + "';";
             ResultSet rs = sta.executeQuery(query);
-            
-            while (rs.next()) {                
-                 System.out.println("\n Autor: " + rs.getString("autor") + "\n Titulo: " + rs.getString("titulo"));
-                 
+
+            while (rs.next()) {
+                System.out.println("\n Autor: " + rs.getString("autor") + "\n Titulo: " + rs.getString("titulo"));
+
             }
-            
+
             rs.close();
             sta.close();
 
         } catch (SQLException ex) {
             System.out.println("Error al consultar los datos");
+
+        }
+
+    }
+
+    public String consulta_PreparedStatement(String autor) {
+
+        String salidaConsulta = ""; 
+        String query = "SELECT * FROM album WHERE autor = ?;";
+
+        try {
+
+            PreparedStatement pst = conn1.prepareStatement(query);
+            pst.setString(1, autor);
+
+            ResultSet rs = pst.executeQuery();
+
+            while (rs.next()) {
+                salidaConsulta = ("\n --------Resultados:----------" +"\n Autor: " + rs.getString("autor") + "\n Titulo: " + rs.getString("titulo") + "\n -----------------------------------");
+
+            }
+
+            rs.close();
+            pst.close();
+            return salidaConsulta;
+        } catch (SQLException ex) {
+            return ex.toString();
 
         }
 

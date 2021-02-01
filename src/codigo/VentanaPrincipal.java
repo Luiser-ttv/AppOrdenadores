@@ -15,13 +15,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      * Creates new form VentanaPrincipal
      */
     GestorConexion gestor = new GestorConexion();
-    
+
     public VentanaPrincipal() {
         initComponents();
         BotonApagar.setEnabled(false);
         BotonFecha.setEnabled(false);
         BotonFechaBorrar.setEnabled(false);
+        BotonDatpsAlbum.setEnabled(false);
+        BotonConsultas.setEnabled(false);
+        BotonConsultasPrepared.setEnabled(false);
         salidaConsultas.setVisible(false);
+        salidaConsultas.setSize(300, 300);
     }
 
     /**
@@ -44,6 +48,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         BotonFechaBorrar = new javax.swing.JButton();
         BotonDatpsAlbum = new javax.swing.JButton();
         BotonConsultas = new javax.swing.JButton();
+        BotonConsultasPrepared = new javax.swing.JButton();
         insertarDatos = new javax.swing.JLabel();
         nombreCancion = new javax.swing.JLabel();
         nombreAutor = new javax.swing.JLabel();
@@ -141,6 +146,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        BotonConsultasPrepared.setText("OK");
+        BotonConsultasPrepared.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonConsultasPreparedActionPerformed(evt);
+            }
+        });
+
         insertarDatos.setBackground(new java.awt.Color(0, 0, 0));
         insertarDatos.setForeground(new java.awt.Color(204, 204, 204));
         insertarDatos.setText("Insertar Datos en Album");
@@ -219,9 +231,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(BotonDatpsAlbum, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(BotonConsultas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(BotonConsultasPrepared, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(4, 4, 4)))
                 .addGap(19, 19, 19))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondoColorLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BotonConsultas)
+                .addGap(190, 190, 190))
         );
         fondoColorLayout.setVerticalGroup(
             fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -251,8 +267,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addComponent(consultaAutorLabel)
                     .addComponent(consultaCancionLabel)
                     .addComponent(consultaAutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BotonConsultas))
-                .addContainerGap(373, Short.MAX_VALUE))
+                    .addComponent(BotonConsultasPrepared))
+                .addGap(50, 50, 50)
+                .addComponent(BotonConsultas)
+                .addContainerGap(291, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -277,11 +295,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             BotonApagar.setEnabled(true);
             BotonFecha.setEnabled(true);
             BotonFechaBorrar.setEnabled(false);
+            BotonDatpsAlbum.setEnabled(true);
+            BotonConsultas.setEnabled(true);
+            BotonConsultasPrepared.setEnabled(true);
         } else {
             System.out.println("Error en la conexion de la BBDD");
-            
+
         }
-        
+
 
     }//GEN-LAST:event_BotonEncenderActionPerformed
 
@@ -293,6 +314,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             BotonEncender.setEnabled(true);
             BotonFecha.setEnabled(false);
             BotonFechaBorrar.setEnabled(false);
+            BotonDatpsAlbum.setEnabled(false);
+            BotonConsultas.setEnabled(false);
+            BotonConsultasPrepared.setEnabled(false);
         } else {
             System.out.println("Error al cerrar la discorafica");
         }
@@ -309,7 +333,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         gestor.borrarColumna();
         BotonFechaBorrar.setEnabled(false);
         BotonFecha.setEnabled(true);
-        
+
 
     }//GEN-LAST:event_BotonFechaBorrarActionPerformed
 
@@ -325,19 +349,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         } else {
             //Dark Mode
             fondoColor.setBackground(new java.awt.Color(102, 102, 102));
-            
+
             BotonEncender.setBackground(new java.awt.Color(0, 0, 0));
             BotonEncender.setForeground(new java.awt.Color(204, 204, 204));
-            
+
             BotonApagar.setBackground(new java.awt.Color(0, 0, 0));
             BotonApagar.setForeground(new java.awt.Color(204, 204, 204));
-            
+
             BotonFecha.setBackground(new java.awt.Color(0, 0, 0));
             BotonFecha.setForeground(new java.awt.Color(204, 204, 204));
-            
+
             BotonFechaBorrar.setBackground(new java.awt.Color(0, 0, 0));
             BotonFechaBorrar.setForeground(new java.awt.Color(204, 204, 204));
-            
+
             BotonDatpsAlbum.setBackground(new java.awt.Color(0, 0, 0));
             BotonDatpsAlbum.setForeground(new java.awt.Color(204, 204, 204));
         }
@@ -349,11 +373,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonDatpsAlbumActionPerformed
 
     private void BotonConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonConsultasActionPerformed
-        gestor.consulta_StatementAutor(consultaAutor.getText());
-        gestor.consulta_StatementCancion(consultaCancion.getText());
-        
-        
+        //salidaConsultasTexto(gestor.consulta_StatementAutor());
+        //gestor.consulta_StatementCancion(consultaCancion.getText());
+
+
     }//GEN-LAST:event_BotonConsultasActionPerformed
+
+    private void BotonConsultasPreparedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonConsultasPreparedActionPerformed
+
+        salidaConsultasTexto.setText(gestor.consulta_PreparedStatement(consultaAutor.getText()));
+        salidaConsultas.setVisible(true);
+    }//GEN-LAST:event_BotonConsultasPreparedActionPerformed
 
     /**
      * @param args the command line arguments
@@ -394,6 +424,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonApagar;
     private javax.swing.JButton BotonConsultas;
+    private javax.swing.JButton BotonConsultasPrepared;
     private javax.swing.JButton BotonDatpsAlbum;
     private javax.swing.JButton BotonEncender;
     private javax.swing.JButton BotonFecha;

@@ -125,12 +125,17 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="BotonDatpsAlbum" max="32767" attributes="0"/>
-                              <Component id="BotonConsultas" max="32767" attributes="0"/>
+                              <Component id="BotonConsultasPrepared" alignment="1" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="BotonConsultas" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="190" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -165,9 +170,11 @@
                       <Component id="consultaAutorLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="consultaCancionLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="consultaAutor" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="BotonConsultas" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="BotonConsultasPrepared" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="373" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="BotonConsultas" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="291" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -266,6 +273,14 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonConsultasActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="BotonConsultasPrepared">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="OK"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonConsultasPreparedActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="insertarDatos">
