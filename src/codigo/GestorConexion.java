@@ -315,6 +315,23 @@ public class GestorConexion {
 
     }
     
+    public void modificarCancion(String nuevoTitulo, String autor) {
+
+         Statement sta;
+
+        try {
+
+            sta = conn1.createStatement();
+            sta.executeUpdate("UPDATE canciones SET titulo = " + "'" + nuevoTitulo + "'" + " WHERE autor =" + "'" + autor + "'" + ";" );
+            sta.close();
+
+        } catch (SQLException ex) {
+            System.out.println("Error al insertar los datos");
+
+        }
+
+    }
+    
     
     //Esta funcion se queda hecha para el proyecto final, pero por el momento no tendra uso alguno.
     public void insertarConCommit() {

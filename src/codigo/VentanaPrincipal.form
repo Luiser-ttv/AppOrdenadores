@@ -102,11 +102,21 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
-                                  <Component id="modificarAlbum" min="-2" pref="138" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                                      <Component id="modificarAlbumLabel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="modificarCancionAutor" min="-2" pref="138" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="modificarCancion" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="modificarCancionNombre" min="-2" pref="138" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="consultarDatos1" alignment="0" max="32767" attributes="0"/>
                                   <Component id="consultarDatos" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -145,6 +155,7 @@
                                       <EmptySpace pref="45" max="32767" attributes="0"/>
                                       <Component id="BotonConsultasPreparedAlbumes" min="-2" max="-2" attributes="0"/>
                                   </Group>
+                                  <Component id="BotonModificarAlbum" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
@@ -281,11 +292,23 @@
                       <Component id="BotonConsultasCanciones" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="BotonConsultasCancionesAutor" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="106" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="consultarDatos1" min="-2" pref="35" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="modificarCancionNombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="modificarCancion" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="modificarCancionAutor" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="modificarAlbumLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="BotonConsultarAlbum" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="modificarAlbum" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="BotonConsultarCanciones" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="BotonModificarAlbum" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -426,6 +449,30 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonConsultasPreparedAlbumesActionPerformed"/>
           </Events>
         </Component>
+        <Component class="javax.swing.JButton" name="BotonConsultasCanciones">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Por Cancion"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonConsultasCancionesActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="BotonConsultasCancionesAutor">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Por Autor"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonConsultasCancionesAutorActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="BotonModificarAlbum">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Modificar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonModificarAlbumActionPerformed"/>
+          </Events>
+        </Component>
         <Component class="javax.swing.JLabel" name="insertarDatos">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -539,6 +586,66 @@
             <Property name="text" type="java.lang.String" value="Duracion:"/>
           </Properties>
         </Component>
+        <Component class="javax.swing.JLabel" name="consultaAutorCancionesLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Autor:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="consultaCancionCancionesLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Cancion:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="consultarDatosCanciones">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="0" type="rgb"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Consultar Datos en Canciones"/>
+            <Property name="alignmentX" type="float" value="1.0"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                <BevelBorder/>
+              </Border>
+            </Property>
+            <Property name="opaque" type="boolean" value="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="modificarAlbumLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Autor:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="consultarDatos1">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="0" type="rgb"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Modificar Cancion"/>
+            <Property name="alignmentX" type="float" value="1.0"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                <BevelBorder/>
+              </Border>
+            </Property>
+            <Property name="opaque" type="boolean" value="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="modificarCancion">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Nombre:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="consultaCancionCanciones">
+        </Component>
         <Component class="javax.swing.JTextField" name="nombreCancionField">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -602,56 +709,11 @@
             <Property name="text" type="java.lang.String" value="00:00:00"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="BotonConsultasCanciones">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Por Cancion"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonConsultasCancionesActionPerformed"/>
-          </Events>
-        </Component>
         <Component class="javax.swing.JTextField" name="consultaAutorCanciones">
         </Component>
-        <Component class="javax.swing.JLabel" name="consultaAutorCancionesLabel">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Autor:"/>
-          </Properties>
+        <Component class="javax.swing.JTextField" name="modificarCancionAutor">
         </Component>
-        <Component class="javax.swing.JLabel" name="consultaCancionCancionesLabel">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Cancion:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="consultaCancionCanciones">
-        </Component>
-        <Component class="javax.swing.JLabel" name="consultarDatosCanciones">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="0" type="rgb"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="cc" red="cc" type="rgb"/>
-            </Property>
-            <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Consultar Datos en Canciones"/>
-            <Property name="alignmentX" type="float" value="1.0"/>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
-                <BevelBorder/>
-              </Border>
-            </Property>
-            <Property name="opaque" type="boolean" value="true"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="modificarAlbum">
-        </Component>
-        <Component class="javax.swing.JButton" name="BotonConsultasCancionesAutor">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Por Autor"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonConsultasCancionesAutorActionPerformed"/>
-          </Events>
+        <Component class="javax.swing.JTextField" name="modificarCancionNombre">
         </Component>
       </SubComponents>
     </Container>
