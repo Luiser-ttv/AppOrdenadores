@@ -24,6 +24,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         BotonDatpsAlbum.setEnabled(false);
         BotonConsultas.setEnabled(false);
         BotonConsultasPrepared.setEnabled(false);
+        BotonCommit.setEnabled(false);
         salidaConsultas.setVisible(false);
         salidaConsultas.setSize(300, 300);
     }
@@ -49,6 +50,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         BotonDatpsAlbum = new javax.swing.JButton();
         BotonConsultas = new javax.swing.JButton();
         BotonConsultasPrepared = new javax.swing.JButton();
+        BotonCommit = new javax.swing.JButton();
         insertarDatos = new javax.swing.JLabel();
         nombreCancion = new javax.swing.JLabel();
         nombreAutor = new javax.swing.JLabel();
@@ -153,6 +155,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        BotonCommit.setText("OK2");
+        BotonCommit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonCommitActionPerformed(evt);
+            }
+        });
+
         insertarDatos.setBackground(new java.awt.Color(0, 0, 0));
         insertarDatos.setForeground(new java.awt.Color(204, 204, 204));
         insertarDatos.setText("Insertar Datos en Album");
@@ -238,6 +247,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(BotonConsultas)
                 .addGap(190, 190, 190))
+            .addGroup(fondoColorLayout.createSequentialGroup()
+                .addGap(208, 208, 208)
+                .addComponent(BotonCommit)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         fondoColorLayout.setVerticalGroup(
             fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -270,7 +283,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addComponent(BotonConsultasPrepared))
                 .addGap(50, 50, 50)
                 .addComponent(BotonConsultas)
-                .addContainerGap(291, Short.MAX_VALUE))
+                .addGap(40, 40, 40)
+                .addComponent(BotonCommit)
+                .addContainerGap(219, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -298,6 +313,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             BotonDatpsAlbum.setEnabled(true);
             BotonConsultas.setEnabled(true);
             BotonConsultasPrepared.setEnabled(true);
+            BotonCommit.setEnabled(true);
         } else {
             System.out.println("Error en la conexion de la BBDD");
 
@@ -317,6 +333,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             BotonDatpsAlbum.setEnabled(false);
             BotonConsultas.setEnabled(false);
             BotonConsultasPrepared.setEnabled(false);
+            BotonCommit.setEnabled(false);
         } else {
             System.out.println("Error al cerrar la discorafica");
         }
@@ -385,6 +402,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         salidaConsultas.setVisible(true);
     }//GEN-LAST:event_BotonConsultasPreparedActionPerformed
 
+    private void BotonCommitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCommitActionPerformed
+       gestor.insertarConCommit();
+    }//GEN-LAST:event_BotonCommitActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -423,6 +444,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonApagar;
+    private javax.swing.JButton BotonCommit;
     private javax.swing.JButton BotonConsultas;
     private javax.swing.JButton BotonConsultasPrepared;
     private javax.swing.JButton BotonDatpsAlbum;

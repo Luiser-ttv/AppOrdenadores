@@ -183,5 +183,40 @@ public class GestorConexion {
         }
 
     }
+    
+    public void insertarConCommit() {
+
+        
+        
+        Statement sta;
+
+        try {
+            
+            conn1.setAutoCommit(false);
+            
+            sta = conn1.createStatement();
+            
+            sta.executeUpdate("INSERT INTO album (titulo, autor) VALUES ('Outro Chill', 'Hora de aventuras');");
+            sta.executeUpdate("INSERT INTO album (titulo, autor) VALUES ('Outro Chill II', 'Adventure Time');");
+            
+            sta.close();
+            
+            conn1.commit();
+        } catch (SQLException ex) {
+            
+            
+            
+            if(conn1!=null){
+                try {
+                    conn1.rollback();
+                } catch (SQLException ex1) {
+                    System.out.println("Error al insertar los datos");
+                }
+            
+            }
+
+        }
+
+    }
 
 }
