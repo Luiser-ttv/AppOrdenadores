@@ -514,6 +514,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             BotonConsultasPreparedAlbumes.setEnabled(false);
             BotonConsultasCanciones.setEnabled(false);
             BotonConsultasCancionesAutor.setEnabled(false);
+            
         } else {
             System.out.println("Error al cerrar la discorafica");
         }
