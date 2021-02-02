@@ -21,11 +21,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         BotonApagar.setEnabled(false);
         BotonFecha.setEnabled(false);
         BotonFechaBorrar.setEnabled(false);
-        BotonDatpsAlbum.setEnabled(false);
-        BotonConsultas.setEnabled(false);
+        BotonDatosAlbum.setEnabled(false);
+        BotonConsultarAlbum.setEnabled(false);
+        BotonConsultarCanciones.setEnabled(false);
         BotonConsultasPrepared.setEnabled(false);
         BotonCommit.setEnabled(false);
-        salidaConsultas.setVisible(false);
+        BotonDatosCanciones.setEnabled(false);
+        
+        salidaConsultas.setVisible(false);    
         salidaConsultas.setSize(300, 300);
     }
 
@@ -47,21 +50,32 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         BotonEncender = new javax.swing.JButton();
         BotonFecha = new javax.swing.JButton();
         BotonFechaBorrar = new javax.swing.JButton();
-        BotonDatpsAlbum = new javax.swing.JButton();
-        BotonConsultas = new javax.swing.JButton();
+        BotonDatosAlbum = new javax.swing.JButton();
+        BotonConsultarAlbum = new javax.swing.JButton();
+        BotonConsultarCanciones = new javax.swing.JButton();
         BotonConsultasPrepared = new javax.swing.JButton();
         BotonCommit = new javax.swing.JButton();
+        BotonDatosCanciones = new javax.swing.JButton();
         insertarDatos = new javax.swing.JLabel();
         nombreCancion = new javax.swing.JLabel();
         nombreAutor = new javax.swing.JLabel();
+        nombreNCanciones = new javax.swing.JLabel();
         insertarFecha = new javax.swing.JLabel();
         consultarDatos = new javax.swing.JLabel();
         consultaAutorLabel = new javax.swing.JLabel();
         consultaCancionLabel = new javax.swing.JLabel();
+        insertarDatosCancion = new javax.swing.JLabel();
+        nombreCancionCanciones = new javax.swing.JLabel();
+        nombreAutorCanciones = new javax.swing.JLabel();
+        nombreDuracion = new javax.swing.JLabel();
         nombreCancionField = new javax.swing.JTextField();
         nombreAutorField = new javax.swing.JTextField();
+        nombreNCancionesField = new javax.swing.JTextField();
         consultaCancion = new javax.swing.JTextField();
         consultaAutor = new javax.swing.JTextField();
+        nombreCancionCancionesField = new javax.swing.JTextField();
+        nombreAutorCancionesField = new javax.swing.JTextField();
+        nombreDuracionField = new javax.swing.JTextField();
 
         salidaConsultasTexto.setColumns(20);
         salidaConsultasTexto.setRows(5);
@@ -132,45 +146,65 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        BotonDatpsAlbum.setBackground(new java.awt.Color(0, 0, 0));
-        BotonDatpsAlbum.setForeground(new java.awt.Color(204, 204, 204));
-        BotonDatpsAlbum.setText("OK");
-        BotonDatpsAlbum.addActionListener(new java.awt.event.ActionListener() {
+        BotonDatosAlbum.setBackground(new java.awt.Color(0, 0, 0));
+        BotonDatosAlbum.setForeground(new java.awt.Color(204, 204, 204));
+        BotonDatosAlbum.setText("Insertar datos");
+        BotonDatosAlbum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonDatpsAlbumActionPerformed(evt);
+                BotonDatosAlbumActionPerformed(evt);
             }
         });
 
-        BotonConsultas.setText("OK");
-        BotonConsultas.addActionListener(new java.awt.event.ActionListener() {
+        BotonConsultarAlbum.setText("Consultar Albumes");
+        BotonConsultarAlbum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonConsultasActionPerformed(evt);
+                BotonConsultarAlbumActionPerformed(evt);
             }
         });
 
-        BotonConsultasPrepared.setText("OK");
+        BotonConsultarCanciones.setText("Consultar Canciones");
+        BotonConsultarCanciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonConsultarCancionesActionPerformed(evt);
+            }
+        });
+
+        BotonConsultasPrepared.setText("Consultar datos");
         BotonConsultasPrepared.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonConsultasPreparedActionPerformed(evt);
             }
         });
 
-        BotonCommit.setText("OK2");
+        BotonCommit.setText("Insertar Con Commit");
         BotonCommit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonCommitActionPerformed(evt);
             }
         });
 
+        BotonDatosCanciones.setBackground(new java.awt.Color(0, 0, 0));
+        BotonDatosCanciones.setForeground(new java.awt.Color(204, 204, 204));
+        BotonDatosCanciones.setText("Insertar datos");
+        BotonDatosCanciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonDatosCancionesActionPerformed(evt);
+            }
+        });
+
         insertarDatos.setBackground(new java.awt.Color(0, 0, 0));
         insertarDatos.setForeground(new java.awt.Color(204, 204, 204));
+        insertarDatos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         insertarDatos.setText("Insertar Datos en Album");
         insertarDatos.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        insertarDatos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         insertarDatos.setOpaque(true);
 
-        nombreCancion.setText("Cancion:");
+        nombreCancion.setText("Album:");
 
         nombreAutor.setText("Autor:");
+
+        nombreNCanciones.setText("Canciones:");
 
         insertarFecha.setBackground(new java.awt.Color(0, 0, 0));
         insertarFecha.setForeground(new java.awt.Color(204, 204, 204));
@@ -180,7 +214,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         consultarDatos.setBackground(new java.awt.Color(0, 0, 0));
         consultarDatos.setForeground(new java.awt.Color(204, 204, 204));
-        consultarDatos.setText("Consultar Datos");
+        consultarDatos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        consultarDatos.setText("Consultar Datos Album");
         consultarDatos.setAlignmentX(1.0F);
         consultarDatos.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         consultarDatos.setOpaque(true);
@@ -188,6 +223,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         consultaAutorLabel.setText("Autor:");
 
         consultaCancionLabel.setText("Cancion:");
+
+        insertarDatosCancion.setBackground(new java.awt.Color(0, 0, 0));
+        insertarDatosCancion.setForeground(new java.awt.Color(204, 204, 204));
+        insertarDatosCancion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        insertarDatosCancion.setText("Insertar Datos en Canciones");
+        insertarDatosCancion.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        insertarDatosCancion.setOpaque(true);
+
+        nombreCancionCanciones.setText("Cancion:");
+
+        nombreAutorCanciones.setText("Autor:");
+
+        nombreDuracion.setText("Duracion:");
 
         nombreCancionField.setBackground(new java.awt.Color(0, 0, 0));
         nombreCancionField.setForeground(new java.awt.Color(204, 204, 204));
@@ -197,20 +245,28 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         nombreAutorField.setForeground(new java.awt.Color(204, 204, 204));
         nombreAutorField.setCaretColor(new java.awt.Color(204, 204, 204));
 
+        nombreCancionCancionesField.setBackground(new java.awt.Color(0, 0, 0));
+        nombreCancionCancionesField.setForeground(new java.awt.Color(204, 204, 204));
+        nombreCancionCancionesField.setDisabledTextColor(new java.awt.Color(102, 102, 102));
+
+        nombreAutorCancionesField.setBackground(new java.awt.Color(0, 0, 0));
+        nombreAutorCancionesField.setForeground(new java.awt.Color(204, 204, 204));
+        nombreAutorCancionesField.setCaretColor(new java.awt.Color(204, 204, 204));
+
+        nombreDuracionField.setText("00:00:00");
+
         javax.swing.GroupLayout fondoColorLayout = new javax.swing.GroupLayout(fondoColor);
         fondoColor.setLayout(fondoColorLayout);
         fondoColorLayout.setHorizontalGroup(
             fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(fondoColorLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(insertarFecha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(insertarDatos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BotonEncender, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(consultarDatos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(fondoColorLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(insertarFecha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(BotonEncender, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
                         .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(fondoColorLayout.createSequentialGroup()
                                 .addComponent(BotonFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -218,39 +274,60 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                                 .addComponent(BotonFechaBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(fondoColorLayout.createSequentialGroup()
                                 .addComponent(BotonApagar, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(darkMode))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 186, Short.MAX_VALUE)
+                                .addComponent(darkMode)))
+                        .addGap(19, 19, 19))
                     .addGroup(fondoColorLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(11, 11, 11)
+                        .addComponent(BotonCommit)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(BotonConsultarAlbum, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(BotonConsultarCanciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())
+                    .addGroup(fondoColorLayout.createSequentialGroup()
+                        .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(fondoColorLayout.createSequentialGroup()
+                                .addComponent(consultaCancionLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(consultaCancion))
+                            .addComponent(consultarDatos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, fondoColorLayout.createSequentialGroup()
+                                .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(fondoColorLayout.createSequentialGroup()
+                                        .addGap(24, 24, 24)
+                                        .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(nombreCancion)
+                                            .addComponent(nombreAutor)))
+                                    .addComponent(nombreNCanciones))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(nombreCancionField, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
+                                    .addComponent(nombreAutorField, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
+                                    .addComponent(nombreNCancionesField)))
+                            .addComponent(insertarDatos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
+                            .addGroup(fondoColorLayout.createSequentialGroup()
+                                .addComponent(consultaAutorLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(consultaAutor, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(BotonDatosAlbum, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(BotonConsultasPrepared, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nombreCancion, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(consultaCancionLabel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nombreCancionField, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(consultaCancion, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(consultaAutorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(nombreAutor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(consultaAutor, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
-                            .addComponent(nombreAutorField))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(BotonDatpsAlbum, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(BotonConsultasPrepared, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(4, 4, 4)))
-                .addGap(19, 19, 19))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondoColorLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(BotonConsultas)
-                .addGap(190, 190, 190))
-            .addGroup(fondoColorLayout.createSequentialGroup()
-                .addGap(208, 208, 208)
-                .addComponent(BotonCommit)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(fondoColorLayout.createSequentialGroup()
+                                    .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(nombreCancionCanciones)
+                                        .addComponent(nombreAutorCanciones)
+                                        .addComponent(nombreDuracion))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(nombreCancionCancionesField)
+                                        .addComponent(nombreAutorCancionesField)
+                                        .addComponent(nombreDuracionField, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(insertarDatosCancion, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(BotonDatosCanciones, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap())))
         );
         fondoColorLayout.setVerticalGroup(
             fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -260,32 +337,64 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addComponent(BotonEncender)
                     .addComponent(BotonApagar)
                     .addComponent(darkMode))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(insertarFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BotonFecha)
                     .addComponent(BotonFechaBorrar))
-                .addGap(21, 21, 21)
-                .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(insertarDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nombreCancionField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nombreCancion)
-                    .addComponent(nombreAutor)
-                    .addComponent(nombreAutorField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BotonDatpsAlbum))
                 .addGap(18, 18, 18)
+                .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(fondoColorLayout.createSequentialGroup()
+                        .addComponent(insertarDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(nombreCancion)
+                            .addComponent(nombreCancionField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(nombreAutor)
+                            .addComponent(nombreAutorField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(nombreNCancionesField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nombreNCanciones))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BotonDatosAlbum))
+                    .addGroup(fondoColorLayout.createSequentialGroup()
+                        .addComponent(insertarDatosCancion, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(nombreCancionCanciones)
+                            .addComponent(nombreCancionCancionesField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(nombreAutorCanciones)
+                            .addComponent(nombreAutorCancionesField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(nombreDuracion)
+                            .addComponent(nombreDuracionField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BotonDatosCanciones)))
+                .addGap(12, 12, 12)
+                .addComponent(consultarDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(consultarDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(consultaCancion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(consultaAutorLabel)
                     .addComponent(consultaCancionLabel)
+                    .addComponent(consultaCancion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(consultaAutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BotonConsultasPrepared))
-                .addGap(50, 50, 50)
-                .addComponent(BotonConsultas)
-                .addGap(40, 40, 40)
-                .addComponent(BotonCommit)
-                .addContainerGap(219, Short.MAX_VALUE))
+                    .addComponent(consultaAutorLabel))
+                .addGap(32, 32, 32)
+                .addComponent(BotonConsultasPrepared)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addComponent(BotonConsultarCanciones)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BotonConsultarAlbum)
+                    .addComponent(BotonCommit))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -310,10 +419,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             BotonApagar.setEnabled(true);
             BotonFecha.setEnabled(true);
             BotonFechaBorrar.setEnabled(false);
-            BotonDatpsAlbum.setEnabled(true);
-            BotonConsultas.setEnabled(true);
+            BotonDatosAlbum.setEnabled(true);
+            BotonConsultarAlbum.setEnabled(true);
+            BotonConsultarCanciones.setEnabled(true);
             BotonConsultasPrepared.setEnabled(true);
             BotonCommit.setEnabled(true);
+            BotonDatosCanciones.setEnabled(true);
         } else {
             System.out.println("Error en la conexion de la BBDD");
 
@@ -330,10 +441,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             BotonEncender.setEnabled(true);
             BotonFecha.setEnabled(false);
             BotonFechaBorrar.setEnabled(false);
-            BotonDatpsAlbum.setEnabled(false);
-            BotonConsultas.setEnabled(false);
+            BotonDatosAlbum.setEnabled(false);
+            BotonConsultarAlbum.setEnabled(false);
+            BotonConsultarCanciones.setEnabled(false);
             BotonConsultasPrepared.setEnabled(false);
             BotonCommit.setEnabled(false);
+            BotonDatosCanciones.setEnabled(false);
         } else {
             System.out.println("Error al cerrar la discorafica");
         }
@@ -379,22 +492,22 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             BotonFechaBorrar.setBackground(new java.awt.Color(0, 0, 0));
             BotonFechaBorrar.setForeground(new java.awt.Color(204, 204, 204));
 
-            BotonDatpsAlbum.setBackground(new java.awt.Color(0, 0, 0));
-            BotonDatpsAlbum.setForeground(new java.awt.Color(204, 204, 204));
+            BotonDatosAlbum.setBackground(new java.awt.Color(0, 0, 0));
+            BotonDatosAlbum.setForeground(new java.awt.Color(204, 204, 204));
         }
     }//GEN-LAST:event_darkModeMousePressed
 
-    private void BotonDatpsAlbumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonDatpsAlbumActionPerformed
-        gestor.insertarAlbum(nombreCancionField.getText(), nombreAutorField.getText());
+    private void BotonDatosAlbumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonDatosAlbumActionPerformed
+        gestor.insertarAlbum(nombreCancionField.getText(), nombreAutorField.getText(), nombreNCancionesField.getText());
 
-    }//GEN-LAST:event_BotonDatpsAlbumActionPerformed
+    }//GEN-LAST:event_BotonDatosAlbumActionPerformed
 
-    private void BotonConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonConsultasActionPerformed
-        //salidaConsultasTexto(gestor.consulta_StatementAutor());
-        //gestor.consulta_StatementCancion(consultaCancion.getText());
+    private void BotonConsultarAlbumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonConsultarAlbumActionPerformed
+        
+        salidaConsultasTexto.setText(gestor.consultaAlbumes());
+        salidaConsultas.setVisible(true);
 
-
-    }//GEN-LAST:event_BotonConsultasActionPerformed
+    }//GEN-LAST:event_BotonConsultarAlbumActionPerformed
 
     private void BotonConsultasPreparedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonConsultasPreparedActionPerformed
 
@@ -405,6 +518,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void BotonCommitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCommitActionPerformed
        gestor.insertarConCommit();
     }//GEN-LAST:event_BotonCommitActionPerformed
+
+    private void BotonConsultarCancionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonConsultarCancionesActionPerformed
+        salidaConsultasTexto.setText(gestor.consultaCanciones());
+        salidaConsultas.setVisible(true);
+    }//GEN-LAST:event_BotonConsultarCancionesActionPerformed
+
+    private void BotonDatosCancionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonDatosCancionesActionPerformed
+         gestor.insertarCancion(nombreCancionCancionesField.getText(), nombreAutorCancionesField.getText(), nombreDuracionField.getText());
+    }//GEN-LAST:event_BotonDatosCancionesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -445,9 +567,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonApagar;
     private javax.swing.JButton BotonCommit;
-    private javax.swing.JButton BotonConsultas;
+    private javax.swing.JButton BotonConsultarAlbum;
+    private javax.swing.JButton BotonConsultarCanciones;
     private javax.swing.JButton BotonConsultasPrepared;
-    private javax.swing.JButton BotonDatpsAlbum;
+    private javax.swing.JButton BotonDatosAlbum;
+    private javax.swing.JButton BotonDatosCanciones;
     private javax.swing.JButton BotonEncender;
     private javax.swing.JButton BotonFecha;
     private javax.swing.JButton BotonFechaBorrar;
@@ -459,12 +583,21 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JToggleButton darkMode;
     private javax.swing.JPanel fondoColor;
     private javax.swing.JLabel insertarDatos;
+    private javax.swing.JLabel insertarDatosCancion;
     private javax.swing.JLabel insertarFecha;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel nombreAutor;
+    private javax.swing.JLabel nombreAutorCanciones;
+    private javax.swing.JTextField nombreAutorCancionesField;
     private javax.swing.JTextField nombreAutorField;
     private javax.swing.JLabel nombreCancion;
+    private javax.swing.JLabel nombreCancionCanciones;
+    private javax.swing.JTextField nombreCancionCancionesField;
     private javax.swing.JTextField nombreCancionField;
+    private javax.swing.JLabel nombreDuracion;
+    private javax.swing.JTextField nombreDuracionField;
+    private javax.swing.JLabel nombreNCanciones;
+    private javax.swing.JTextField nombreNCancionesField;
     private javax.swing.JDialog salidaConsultas;
     private javax.swing.JTextArea salidaConsultasTexto;
     // End of variables declaration//GEN-END:variables

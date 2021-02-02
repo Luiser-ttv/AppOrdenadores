@@ -79,15 +79,13 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="insertarFecha" max="32767" attributes="0"/>
-                      <Component id="insertarDatos" max="32767" attributes="0"/>
-                      <Component id="BotonEncender" max="32767" attributes="0"/>
-                      <Component id="consultarDatos" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="insertarFecha" max="32767" attributes="0"/>
+                              <Component id="BotonEncender" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace pref="82" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <Component id="BotonFecha" min="-2" pref="144" max="-2" attributes="0"/>
@@ -96,51 +94,80 @@
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="BotonApagar" min="-2" pref="144" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace pref="186" max="32767" attributes="0"/>
                                   <Component id="darkMode" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
+                          <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace type="unrelated" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                          <Component id="BotonCommit" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="BotonConsultarAlbum" max="32767" attributes="0"/>
+                              <Component id="BotonConsultarCanciones" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="consultaCancionLabel" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="consultaCancion" max="32767" attributes="0"/>
+                              </Group>
+                              <Component id="consultarDatos" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Component id="nombreCancion" min="-2" max="-2" attributes="0"/>
+                                              <Component id="nombreAutor" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Component id="nombreNCanciones" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="nombreCancionField" pref="144" max="32767" attributes="0"/>
+                                      <Component id="nombreAutorField" pref="144" max="32767" attributes="0"/>
+                                      <Component id="nombreNCancionesField" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Component id="insertarDatos" alignment="0" pref="213" max="32767" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="consultaAutorLabel" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="consultaAutor" min="-2" pref="156" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="BotonDatosAlbum" alignment="0" max="32767" attributes="0"/>
+                              <Component id="BotonConsultasPrepared" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="nombreCancion" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="consultaCancionLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="nombreCancionCanciones" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="nombreAutorCanciones" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="nombreDuracion" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="nombreCancionCancionesField" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="nombreAutorCancionesField" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="nombreDuracionField" alignment="0" min="-2" pref="144" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Component id="insertarDatosCancion" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="BotonDatosCanciones" alignment="1" min="-2" pref="213" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="nombreCancionField" min="-2" pref="144" max="-2" attributes="0"/>
-                              <Component id="consultaCancion" min="-2" pref="144" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="consultaAutorLabel" max="32767" attributes="0"/>
-                              <Component id="nombreAutor" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="consultaAutor" pref="144" max="32767" attributes="0"/>
-                              <Component id="nombreAutorField" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="BotonDatpsAlbum" max="32767" attributes="0"/>
-                              <Component id="BotonConsultasPrepared" alignment="1" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="BotonConsultas" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="190" max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="208" max="-2" attributes="0"/>
-                  <Component id="BotonCommit" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -153,35 +180,77 @@
                       <Component id="BotonApagar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="darkMode" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="insertarFecha" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                       <Component id="BotonFecha" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="BotonFechaBorrar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="insertarDatos" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                      <Component id="nombreCancionField" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="nombreCancion" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="nombreAutor" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="nombreAutorField" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="BotonDatpsAlbum" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="consultarDatos" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                      <Component id="consultaCancion" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="consultaAutorLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="consultaCancionLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="consultaAutor" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="BotonConsultasPrepared" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="insertarDatos" min="-2" pref="35" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="nombreCancion" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="nombreCancionField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="nombreAutor" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="nombreAutorField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="nombreNCancionesField" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="nombreNCanciones" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="BotonDatosAlbum" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="insertarDatosCancion" min="-2" pref="35" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="nombreCancionCanciones" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="nombreCancionCancionesField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="nombreAutorCanciones" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="nombreAutorCancionesField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="nombreDuracion" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="nombreDuracionField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="BotonDatosCanciones" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                  <Component id="BotonConsultas" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                  <Component id="BotonCommit" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="219" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                  <Component id="consultarDatos" min="-2" pref="35" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="consultaCancionLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="consultaCancion" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="consultaAutor" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="consultaAutorLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                  <Component id="BotonConsultasPrepared" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="48" max="32767" attributes="0"/>
+                  <Component id="BotonConsultarCanciones" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="BotonConsultarAlbum" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="BotonCommit" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -260,7 +329,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonFechaBorrarActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="BotonDatpsAlbum">
+        <Component class="javax.swing.JButton" name="BotonDatosAlbum">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
@@ -268,23 +337,31 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="OK"/>
+            <Property name="text" type="java.lang.String" value="Insertar datos"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonDatpsAlbumActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonDatosAlbumActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="BotonConsultas">
+        <Component class="javax.swing.JButton" name="BotonConsultarAlbum">
           <Properties>
-            <Property name="text" type="java.lang.String" value="OK"/>
+            <Property name="text" type="java.lang.String" value="Consultar Albumes"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonConsultasActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonConsultarAlbumActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="BotonConsultarCanciones">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Consultar Canciones"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonConsultarCancionesActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="BotonConsultasPrepared">
           <Properties>
-            <Property name="text" type="java.lang.String" value="OK"/>
+            <Property name="text" type="java.lang.String" value="Consultar datos"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonConsultasPreparedActionPerformed"/>
@@ -292,10 +369,24 @@
         </Component>
         <Component class="javax.swing.JButton" name="BotonCommit">
           <Properties>
-            <Property name="text" type="java.lang.String" value="OK2"/>
+            <Property name="text" type="java.lang.String" value="Insertar Con Commit"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonCommitActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="BotonDatosCanciones">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="0" type="rgb"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Insertar datos"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonDatosCancionesActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="insertarDatos">
@@ -306,23 +397,30 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Insertar Datos en Album"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
                 <BevelBorder/>
               </Border>
             </Property>
+            <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="opaque" type="boolean" value="true"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="nombreCancion">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Cancion:"/>
+            <Property name="text" type="java.lang.String" value="Album:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="nombreAutor">
           <Properties>
             <Property name="text" type="java.lang.String" value="Autor:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="nombreNCanciones">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Canciones:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="insertarFecha">
@@ -350,7 +448,8 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Consultar Datos"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Consultar Datos Album"/>
             <Property name="alignmentX" type="float" value="1.0"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
@@ -368,6 +467,39 @@
         <Component class="javax.swing.JLabel" name="consultaCancionLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cancion:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="insertarDatosCancion">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="0" type="rgb"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Insertar Datos en Canciones"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                <BevelBorder/>
+              </Border>
+            </Property>
+            <Property name="opaque" type="boolean" value="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="nombreCancionCanciones">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Cancion:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="nombreAutorCanciones">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Autor:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="nombreDuracion">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Duracion:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="nombreCancionField">
@@ -396,9 +528,42 @@
             </Property>
           </Properties>
         </Component>
+        <Component class="javax.swing.JTextField" name="nombreNCancionesField">
+        </Component>
         <Component class="javax.swing.JTextField" name="consultaCancion">
         </Component>
         <Component class="javax.swing.JTextField" name="consultaAutor">
+        </Component>
+        <Component class="javax.swing.JTextField" name="nombreCancionCancionesField">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="0" type="rgb"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+            </Property>
+            <Property name="disabledTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="66" green="66" red="66" type="rgb"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="nombreAutorCancionesField">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="0" type="rgb"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+            </Property>
+            <Property name="caretColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="nombreDuracionField">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="00:00:00"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
