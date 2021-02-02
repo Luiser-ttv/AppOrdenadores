@@ -191,13 +191,13 @@ public class GestorConexion {
 
     }
 
-    public String consulta_PreparedStatement(String autor) {
+    public String consulta_AlbumesAutor(String autor) {
 
         String salidaConsulta = "";
         String query = "SELECT * FROM album WHERE autor = ?;";
 
         try {
-
+ 
             PreparedStatement pst = conn1.prepareStatement(query);
             pst.setString(1, autor);
 
@@ -205,8 +205,40 @@ public class GestorConexion {
 
             while (rs.next()) {
                 salidaConsulta = ("\n --------Resultados:----------"
-                        + "\n Autor: " + rs.getString("autor")
                         + "\n Titulo: " + rs.getString("titulo")
+                        + "\n Autor: " + rs.getString("autor")
+                        + "\n Nº Canciones: " + rs.getString("numero_canciones")
+                        + "\n -----------------------------------");
+
+            }
+
+            rs.close();
+            pst.close();
+            return salidaConsulta;
+        } catch (SQLException ex) {
+            return ex.toString();
+
+        }
+
+    }
+    
+    public String consulta_AlbumesTitulo(String titulo) {
+
+        String salidaConsulta = "";
+        String query = "SELECT * FROM album WHERE titulo = ?;";
+
+        try {
+ 
+            PreparedStatement pst = conn1.prepareStatement(query);
+            pst.setString(1, titulo);
+
+            ResultSet rs = pst.executeQuery();
+
+            while (rs.next()) {
+                salidaConsulta = ("\n --------Resultados:----------"
+                        + "\n Titulo: " + rs.getString("titulo")
+                        + "\n Autor: " + rs.getString("autor")
+                        + "\n Nº Canciones: " + rs.getString("numero_canciones")
                         + "\n -----------------------------------");
 
             }
@@ -221,6 +253,70 @@ public class GestorConexion {
 
     }
 
+    public String consulta_CancionesAutor(String autor) {
+
+        String salidaConsulta = "";
+        String query = "SELECT * FROM canciones WHERE autor = ?;";
+
+        try {
+
+            PreparedStatement pst = conn1.prepareStatement(query);
+            pst.setString(1, autor);
+
+            ResultSet rs = pst.executeQuery();
+
+            while (rs.next()) {
+                salidaConsulta = ("\n --------Resultados:----------"
+                        + "\n Titulo: " + rs.getString("titulo")
+                        + "\n Autor: " + rs.getString("autor")
+                        + "\n Duracion: " + rs.getString("duracion")
+                        + "\n -----------------------------------");
+
+            }
+
+            rs.close();
+            pst.close();
+            return salidaConsulta;
+        } catch (SQLException ex) {
+            return ex.toString();
+
+        }
+
+    }
+    
+    public String consulta_CancionesTitulo(String titulo) {
+
+        String salidaConsulta = "";
+        String query = "SELECT * FROM canciones WHERE titulo = ?;";
+
+        try {
+
+            PreparedStatement pst = conn1.prepareStatement(query);
+            pst.setString(1, titulo);
+
+            ResultSet rs = pst.executeQuery();
+
+            while (rs.next()) {
+                salidaConsulta = ("\n --------Resultados:----------"
+                        + "\n Titulo: " + rs.getString("titulo")
+                        + "\n Autor: " + rs.getString("autor")
+                        + "\n Duracion: " + rs.getString("duracion")
+                        + "\n -----------------------------------");
+
+            }
+
+            rs.close();
+            pst.close();
+            return salidaConsulta;
+        } catch (SQLException ex) {
+            return ex.toString();
+
+        }
+
+    }
+    
+    
+    //Esta funcion se queda hecha para el proyecto final, pero por el momento no tendra uso alguno.
     public void insertarConCommit() {
 
         Statement sta;

@@ -80,7 +80,7 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="insertarFecha" max="32767" attributes="0"/>
                               <Component id="BotonEncender" max="32767" attributes="0"/>
@@ -98,76 +98,100 @@
                                   <Component id="darkMode" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                          <Component id="BotonCommit" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="BotonConsultarAlbum" max="32767" attributes="0"/>
-                              <Component id="BotonConsultarCanciones" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Component id="consultaCancionLabel" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="consultaCancion" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
+                                  <Component id="modificarAlbum" min="-2" pref="138" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="consultarDatos" alignment="0" max="32767" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Component id="nombreCancion" min="-2" max="-2" attributes="0"/>
-                                              <Component id="nombreAutor" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="consultarDatos" alignment="0" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                  <Component id="nombreCancion" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="nombreAutor" min="-2" max="-2" attributes="0"/>
+                                              </Group>
                                           </Group>
+                                          <Component id="nombreNCanciones" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="nombreNCanciones" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="nombreCancionField" pref="144" max="32767" attributes="0"/>
+                                          <Component id="nombreAutorField" pref="144" max="32767" attributes="0"/>
+                                          <Component id="nombreNCancionesField" alignment="0" max="32767" attributes="0"/>
+                                      </Group>
                                   </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="nombreCancionField" pref="144" max="32767" attributes="0"/>
-                                      <Component id="nombreAutorField" pref="144" max="32767" attributes="0"/>
-                                      <Component id="nombreNCancionesField" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="insertarDatos" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="BotonDatosAlbum" alignment="0" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="consultaAutorLabel" min="-2" max="-2" attributes="0"/>
+                                          <Component id="consultaCancionLabel" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="consultaAutor" max="32767" attributes="0"/>
+                                          <Component id="consultaCancion" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="BotonConsultasPrepared" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace pref="45" max="32767" attributes="0"/>
+                                      <Component id="BotonConsultasPreparedAlbumes" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Component id="insertarDatos" alignment="0" pref="213" max="32767" attributes="0"/>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="consultaAutorLabel" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="consultaAutor" min="-2" pref="156" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="BotonDatosAlbum" alignment="0" max="32767" attributes="0"/>
-                              <Component id="BotonConsultasPrepared" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="1" attributes="0">
                                           <Component id="nombreCancionCanciones" alignment="1" min="-2" max="-2" attributes="0"/>
                                           <Component id="nombreAutorCanciones" alignment="1" min="-2" max="-2" attributes="0"/>
                                           <Component id="nombreDuracion" alignment="1" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="nombreCancionCancionesField" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="nombreAutorCancionesField" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="nombreDuracionField" alignment="0" min="-2" pref="144" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="nombreAutorCancionesField" alignment="1" min="-2" pref="144" max="-2" attributes="0"/>
+                                          <Component id="nombreCancionCancionesField" alignment="1" min="-2" pref="144" max="-2" attributes="0"/>
+                                          <Component id="nombreDuracionField" alignment="1" min="-2" pref="144" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <Component id="insertarDatosCancion" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
+                                  <Component id="insertarDatosCancion" alignment="1" pref="213" max="32767" attributes="0"/>
+                                  <Component id="BotonDatosCanciones" alignment="1" pref="213" max="32767" attributes="0"/>
+                                  <Component id="consultarDatosCanciones" alignment="1" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="consultaCancionCancionesLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="consultaAutorCancionesLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="160" pref="160" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <Component id="BotonDatosCanciones" alignment="1" min="-2" pref="213" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="BotonConsultarCanciones" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="BotonConsultarAlbum" pref="148" max="32767" attributes="0"/>
+                                      <Component id="consultaCancionCanciones" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="consultaAutorCanciones" alignment="1" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="BotonConsultasCancionesAutor" min="-2" pref="99" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="BotonConsultasCanciones" min="-2" pref="99" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -211,44 +235,57 @@
                       <Group type="102" attributes="0">
                           <Component id="insertarDatosCancion" min="-2" pref="35" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="nombreCancionCanciones" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="nombreCancionCancionesField" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="nombreAutorCanciones" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="nombreAutorCancionesField" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="nombreDuracion" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="nombreDuracionField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="nombreCancionCancionesField" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="nombreAutorCancionesField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="nombreAutorCanciones" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="nombreDuracionField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="nombreDuracion" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Component id="nombreCancionCanciones" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="BotonDatosCanciones" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                  <Component id="consultarDatos" min="-2" pref="35" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="consultarDatos" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="consultarDatosCanciones" min="-2" pref="35" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="consultaCancionLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="consultaCancion" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="consultaCancionCanciones" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="consultaCancionCancionesLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="consultaAutor" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="consultaAutorLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="consultaAutorCanciones" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="consultaAutorCancionesLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                  <Component id="BotonConsultasPrepared" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="48" max="32767" attributes="0"/>
-                  <Component id="BotonConsultarCanciones" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="BotonConsultasPrepared" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="BotonConsultasPreparedAlbumes" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="BotonConsultasCanciones" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="BotonConsultasCancionesAutor" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="106" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="BotonConsultarAlbum" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="BotonCommit" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="modificarAlbum" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="BotonConsultarCanciones" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -361,18 +398,10 @@
         </Component>
         <Component class="javax.swing.JButton" name="BotonConsultasPrepared">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Consultar datos"/>
+            <Property name="text" type="java.lang.String" value="Por Autor"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonConsultasPreparedActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="BotonCommit">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Insertar Con Commit"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonCommitActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="BotonDatosCanciones">
@@ -387,6 +416,14 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonDatosCancionesActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="BotonConsultasPreparedAlbumes">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Por Album"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonConsultasPreparedAlbumesActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="insertarDatos">
@@ -449,7 +486,7 @@
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Consultar Datos Album"/>
+            <Property name="text" type="java.lang.String" value="Consultar Datos en Album"/>
             <Property name="alignmentX" type="float" value="1.0"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
@@ -564,6 +601,57 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="00:00:00"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="BotonConsultasCanciones">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Por Cancion"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonConsultasCancionesActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="consultaAutorCanciones">
+        </Component>
+        <Component class="javax.swing.JLabel" name="consultaAutorCancionesLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Autor:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="consultaCancionCancionesLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Cancion:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="consultaCancionCanciones">
+        </Component>
+        <Component class="javax.swing.JLabel" name="consultarDatosCanciones">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="0" type="rgb"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Consultar Datos en Canciones"/>
+            <Property name="alignmentX" type="float" value="1.0"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                <BevelBorder/>
+              </Border>
+            </Property>
+            <Property name="opaque" type="boolean" value="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="modificarAlbum">
+        </Component>
+        <Component class="javax.swing.JButton" name="BotonConsultasCancionesAutor">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Por Autor"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonConsultasCancionesAutorActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
