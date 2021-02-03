@@ -22,6 +22,7 @@ public class GestorConexion {
 
     Connection conn1 = null;
 
+    //Aqui se inicia la conexion.
     public int iniciarConexion() {
 
         String urlBBDD = "jdbc:mysql://localhost:3306/discograficaluisrioja?serverTimezone=UTC";
@@ -44,6 +45,7 @@ public class GestorConexion {
         return aux;
     }
 
+    //Con este metodo se cierra la conexion.
     public int cerrarConexion() {
 
         int aux = -1;
@@ -57,6 +59,7 @@ public class GestorConexion {
         return aux;
     }
 
+    //Con este metodo añadiremos la columna de fecha de publicacion.
     public void aniadirColumna() {
 
         Statement sta;
@@ -72,6 +75,8 @@ public class GestorConexion {
 
     }
 
+    
+    //Con este metodo borraremos la columna creada anteriormente.
     public void borrarColumna() {
 
         Statement sta;
@@ -89,6 +94,7 @@ public class GestorConexion {
 
     }
 
+    //Con este metodo insertaremos nuevos datos en la tabla Album.
     public void insertarAlbum(String cancion, String autor, String NCanciones) {
 
         Statement sta;
@@ -106,6 +112,7 @@ public class GestorConexion {
 
     }
     
+    //Con este metodo insertaremos nuevos datos en la tabla Canciones.
     public void insertarCancion(String cancion, String autor, String duracion) {
 
         Statement sta;
@@ -123,6 +130,7 @@ public class GestorConexion {
 
     }
 
+    //Con este metodo consultaremos los albumes.
     public String consultaAlbumes() {
 
         Statement sta;
@@ -156,7 +164,8 @@ public class GestorConexion {
         }
 
     }
-
+    
+    //Con este metodo consultaremos las canciones.
     public String consultaCanciones() {
 
         Statement sta;
@@ -191,6 +200,7 @@ public class GestorConexion {
 
     }
 
+    //Con este metodo consultaremos la tabla Album mediante Autor.
     public String consulta_AlbumesAutor(String autor) {
 
         String salidaConsulta = "";
@@ -222,6 +232,7 @@ public class GestorConexion {
 
     }
     
+    //Con este metodo consultaremos la tabla Album mediante Titulo.
     public String consulta_AlbumesTitulo(String titulo) {
 
         String salidaConsulta = "";
@@ -253,6 +264,7 @@ public class GestorConexion {
 
     }
 
+    //Con este metodo consultaremos la tabla Canciones mediante Autor.
     public String consulta_CancionesAutor(String autor) {
 
         String salidaConsulta = "";
@@ -284,6 +296,7 @@ public class GestorConexion {
 
     }
     
+    //Con este metodo consultaremos la tabla Canciones mediante Titulo.
     public String consulta_CancionesTitulo(String titulo) {
 
         String salidaConsulta = "";
@@ -315,6 +328,7 @@ public class GestorConexion {
 
     }
     
+    //Con este metodo modificaremos el Titulo de canciones mediante el Autor.
     public void modificarCancion(String nuevoTitulo, String autor) {
 
          Statement sta;

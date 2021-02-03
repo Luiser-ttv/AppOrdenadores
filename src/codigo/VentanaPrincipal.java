@@ -1,6 +1,7 @@
 package codigo;
 
 import javax.swing.JLabel;
+import java.awt.Color;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -133,6 +134,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         BotonApagar.setBackground(java.awt.Color.darkGray);
         BotonApagar.setForeground(java.awt.Color.lightGray);
         BotonApagar.setText("Apagar");
+        BotonApagar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BotonApagar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonApagarActionPerformed(evt);
@@ -142,6 +144,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         BotonEncender.setBackground(java.awt.Color.darkGray);
         BotonEncender.setForeground(java.awt.Color.lightGray);
         BotonEncender.setText("Encender/Actualizar");
+        BotonEncender.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BotonEncender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonEncenderActionPerformed(evt);
@@ -151,6 +154,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         BotonFecha.setBackground(java.awt.Color.darkGray);
         BotonFecha.setForeground(java.awt.Color.lightGray);
         BotonFecha.setText("Añadir fecha");
+        BotonFecha.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BotonFecha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonFechaActionPerformed(evt);
@@ -160,6 +164,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         BotonFechaBorrar.setBackground(java.awt.Color.darkGray);
         BotonFechaBorrar.setForeground(java.awt.Color.lightGray);
         BotonFechaBorrar.setText("Borrar fecha");
+        BotonFechaBorrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BotonFechaBorrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonFechaBorrarActionPerformed(evt);
@@ -169,6 +174,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         BotonDatosAlbum.setBackground(java.awt.Color.darkGray);
         BotonDatosAlbum.setForeground(java.awt.Color.lightGray);
         BotonDatosAlbum.setText("Insertar datos");
+        BotonDatosAlbum.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BotonDatosAlbum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonDatosAlbumActionPerformed(evt);
@@ -178,6 +184,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         BotonConsultarAlbum.setBackground(java.awt.Color.darkGray);
         BotonConsultarAlbum.setForeground(java.awt.Color.lightGray);
         BotonConsultarAlbum.setText("Consultar Albumes");
+        BotonConsultarAlbum.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BotonConsultarAlbum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonConsultarAlbumActionPerformed(evt);
@@ -187,6 +194,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         BotonConsultarCanciones.setBackground(java.awt.Color.darkGray);
         BotonConsultarCanciones.setForeground(java.awt.Color.lightGray);
         BotonConsultarCanciones.setText("Consultar Canciones");
+        BotonConsultarCanciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BotonConsultarCanciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonConsultarCancionesActionPerformed(evt);
@@ -196,6 +204,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         BotonConsultasPrepared.setBackground(java.awt.Color.darkGray);
         BotonConsultasPrepared.setForeground(java.awt.Color.lightGray);
         BotonConsultasPrepared.setText("Por Autor");
+        BotonConsultasPrepared.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BotonConsultasPrepared.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonConsultasPreparedActionPerformed(evt);
@@ -205,6 +214,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         BotonDatosCanciones.setBackground(java.awt.Color.darkGray);
         BotonDatosCanciones.setForeground(java.awt.Color.lightGray);
         BotonDatosCanciones.setText("Insertar datos");
+        BotonDatosCanciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BotonDatosCanciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonDatosCancionesActionPerformed(evt);
@@ -214,6 +224,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         BotonConsultasPreparedAlbumes.setBackground(java.awt.Color.darkGray);
         BotonConsultasPreparedAlbumes.setForeground(java.awt.Color.lightGray);
         BotonConsultasPreparedAlbumes.setText("Por Album");
+        BotonConsultasPreparedAlbumes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BotonConsultasPreparedAlbumes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonConsultasPreparedAlbumesActionPerformed(evt);
@@ -223,6 +234,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         BotonConsultasCanciones.setBackground(java.awt.Color.darkGray);
         BotonConsultasCanciones.setForeground(java.awt.Color.lightGray);
         BotonConsultasCanciones.setText("Por Cancion");
+        BotonConsultasCanciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BotonConsultasCanciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonConsultasCancionesActionPerformed(evt);
@@ -232,6 +244,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         BotonConsultasCancionesAutor.setBackground(java.awt.Color.darkGray);
         BotonConsultasCancionesAutor.setForeground(java.awt.Color.lightGray);
         BotonConsultasCancionesAutor.setText("Por Autor");
+        BotonConsultasCancionesAutor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BotonConsultasCancionesAutor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonConsultasCancionesAutorActionPerformed(evt);
@@ -241,6 +254,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         BotonModificarAlbum.setBackground(java.awt.Color.darkGray);
         BotonModificarAlbum.setForeground(java.awt.Color.lightGray);
         BotonModificarAlbum.setText("Modificar");
+        BotonModificarAlbum.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BotonModificarAlbum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonModificarAlbumActionPerformed(evt);
@@ -269,6 +283,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         insertarFecha.setBackground(java.awt.Color.darkGray);
         insertarFecha.setForeground(java.awt.Color.lightGray);
+        insertarFecha.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         insertarFecha.setText("Añadir/Borrar fecha");
         insertarFecha.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         insertarFecha.setOpaque(true);
@@ -587,7 +602,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         gestor.iniciarConexion();
         if (gestor.iniciarConexion() == 0) {
             System.out.println("Conectado a la discografica");
-            BotonEncender.setEnabled(false);
+            BotonEncender.setEnabled(true);
             BotonApagar.setEnabled(true);
             BotonFecha.setEnabled(true);
             BotonFechaBorrar.setEnabled(false);
@@ -653,10 +668,154 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void darkModeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_darkModeMousePressed
         if (darkMode.isSelected()) {
             //Light Mode
-            fondoColor.setBackground(new java.awt.Color(204, 204, 204));
-            BotonEncender.setBackground(new java.awt.Color(204, 204, 204));
-            BotonEncender.setForeground(new java.awt.Color(0, 0, 0));
+            
+            
+            darkMode.setBackground(java.awt.Color.white);
+            darkMode.setForeground(java.awt.Color.black);
+            
+            fondoColor.setBackground(java.awt.Color.white);
+
+            BotonEncender.setBackground(java.awt.Color.white);
+            BotonEncender.setForeground(java.awt.Color.black);
+
+            BotonApagar.setBackground(java.awt.Color.white);
+            BotonApagar.setForeground(java.awt.Color.black);
+
+            BotonFecha.setBackground(java.awt.Color.white);
+            BotonFecha.setForeground(java.awt.Color.black);
+
+            BotonFechaBorrar.setBackground(java.awt.Color.white);
+            BotonFechaBorrar.setForeground(java.awt.Color.black);
+
+            BotonDatosAlbum.setBackground(java.awt.Color.white);
+            BotonDatosAlbum.setForeground(java.awt.Color.black);
+            
+            BotonConsultarAlbum.setBackground(java.awt.Color.white);
+            BotonConsultarAlbum.setForeground(java.awt.Color.black);
+            
+            BotonConsultarCanciones.setBackground(java.awt.Color.white);
+            BotonConsultarCanciones.setForeground(java.awt.Color.black);
+            
+            BotonConsultasCanciones.setBackground(java.awt.Color.white);
+            BotonConsultasCanciones.setForeground(java.awt.Color.black);
+            
+            BotonConsultasCancionesAutor.setBackground(java.awt.Color.white);
+            BotonConsultasCancionesAutor.setForeground(java.awt.Color.black);
+            
+            BotonConsultasPrepared.setBackground(java.awt.Color.white);
+            BotonConsultasPrepared.setForeground(java.awt.Color.black);
+            
+            BotonConsultasPreparedAlbumes.setBackground(java.awt.Color.white);
+            BotonConsultasPreparedAlbumes.setForeground(java.awt.Color.black);
+            
+            BotonDatosAlbum.setBackground(java.awt.Color.white);
+            BotonDatosAlbum.setForeground(java.awt.Color.black);
+            
+            BotonDatosCanciones.setBackground(java.awt.Color.white);
+            BotonDatosCanciones.setForeground(java.awt.Color.black);
+            
+            BotonModificarAlbum.setBackground(java.awt.Color.white);
+            BotonModificarAlbum.setForeground(java.awt.Color.black);
+            
+            consultaAutor.setBackground(java.awt.Color.white);
+            consultaAutor.setForeground(java.awt.Color.black);
+            
+            consultaAutorCanciones.setBackground(java.awt.Color.white);
+            consultaAutorCanciones.setForeground(java.awt.Color.black);
+            
+            consultaAutorCancionesLabel.setBackground(java.awt.Color.white);
+            consultaAutorCancionesLabel.setForeground(java.awt.Color.black);
+            
+            consultaAutorLabel.setBackground(java.awt.Color.white);
+            consultaAutorLabel.setForeground(java.awt.Color.black);
+            
+            consultaCancion.setBackground(java.awt.Color.white);
+            consultaCancion.setForeground(java.awt.Color.black);
+            
+            consultaCancionCanciones.setBackground(java.awt.Color.white);
+            consultaCancionCanciones.setForeground(java.awt.Color.black);
+            
+            consultaCancionCancionesLabel.setBackground(java.awt.Color.white);
+            consultaCancionCancionesLabel.setForeground(java.awt.Color.black);
+            
+            consultaCancionLabel.setBackground(java.awt.Color.white);
+            consultaCancionLabel.setForeground(java.awt.Color.black);
+            
+            consultarDatos.setBackground(java.awt.Color.white);
+            consultarDatos.setForeground(java.awt.Color.black);
+            
+            consultarDatos1.setBackground(java.awt.Color.white);
+            consultarDatos1.setForeground(java.awt.Color.black);
+            
+            consultarDatosCanciones.setBackground(java.awt.Color.white);
+            consultarDatosCanciones.setForeground(java.awt.Color.black);
+            
+            insertarDatos.setBackground(java.awt.Color.white);
+            insertarDatos.setForeground(java.awt.Color.black);
+            
+            insertarDatosCancion.setBackground(java.awt.Color.white);
+            insertarDatosCancion.setForeground(java.awt.Color.black);
+            
+            insertarFecha.setBackground(java.awt.Color.white);
+            insertarFecha.setForeground(java.awt.Color.black);
+            
+            modificarAlbumLabel.setBackground(java.awt.Color.white);
+            modificarAlbumLabel.setForeground(java.awt.Color.black);
+            
+            modificarCancion.setBackground(java.awt.Color.white);
+            modificarCancion.setForeground(java.awt.Color.black);
+            
+            modificarCancionAutor.setBackground(java.awt.Color.white);
+            modificarCancionAutor.setForeground(java.awt.Color.black);
+            
+            modificarCancionNombre.setBackground(java.awt.Color.white);
+            modificarCancionNombre.setForeground(java.awt.Color.black);
+            
+            nombreAutor.setBackground(java.awt.Color.white);
+            nombreAutor.setForeground(java.awt.Color.black);
+            
+            nombreAutorCanciones.setBackground(java.awt.Color.white);
+            nombreAutorCanciones.setForeground(java.awt.Color.black);
+            
+            nombreAutorCancionesField.setBackground(java.awt.Color.white);
+            nombreAutorCancionesField.setForeground(java.awt.Color.black);
+            
+            nombreAutorField.setBackground(java.awt.Color.white);
+            nombreAutorField.setForeground(java.awt.Color.black);
+            
+            nombreCancion.setBackground(java.awt.Color.white);
+            nombreCancion.setForeground(java.awt.Color.black);
+            
+            nombreCancionCanciones.setBackground(java.awt.Color.white);
+            nombreCancionCanciones.setForeground(java.awt.Color.black);
+            
+            nombreCancionCancionesField.setBackground(java.awt.Color.white);
+            nombreCancionCancionesField.setForeground(java.awt.Color.black);
+            
+            nombreCancionField.setBackground(java.awt.Color.white);
+            nombreCancionField.setForeground(java.awt.Color.black);
+            
+            nombreDuracion.setBackground(java.awt.Color.white);
+            nombreDuracion.setForeground(java.awt.Color.black);
+            
+            nombreDuracionField.setBackground(java.awt.Color.white);
+            nombreDuracionField.setForeground(java.awt.Color.black);
+            
+            nombreNCanciones.setBackground(java.awt.Color.white);
+            nombreNCanciones.setForeground(java.awt.Color.black);
+            
+            nombreNCancionesField.setBackground(java.awt.Color.white);
+            nombreNCancionesField.setForeground(java.awt.Color.black);
+            
+            salidaConsultas.setBackground(java.awt.Color.white);
+            salidaConsultas.setForeground(java.awt.Color.black);
+            
+            salidaConsultasTexto.setBackground(java.awt.Color.white);
+            salidaConsultasTexto.setForeground(java.awt.Color.black);
+            
+            
         } else {
+            
             //Dark Mode
             darkMode.setBackground(java.awt.Color.darkGray);
             darkMode.setForeground(java.awt.Color.lightGray);
@@ -738,7 +897,68 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             consultarDatosCanciones.setBackground(java.awt.Color.darkGray);
             consultarDatosCanciones.setForeground(java.awt.Color.lightGray);
             
+            insertarDatos.setBackground(java.awt.Color.darkGray);
+            insertarDatos.setForeground(java.awt.Color.lightGray);
             
+            insertarDatosCancion.setBackground(java.awt.Color.darkGray);
+            insertarDatosCancion.setForeground(java.awt.Color.lightGray);
+            
+            insertarFecha.setBackground(java.awt.Color.darkGray);
+            insertarFecha.setForeground(java.awt.Color.lightGray);
+            
+            modificarAlbumLabel.setBackground(java.awt.Color.darkGray);
+            modificarAlbumLabel.setForeground(java.awt.Color.lightGray);
+            
+            modificarCancion.setBackground(java.awt.Color.darkGray);
+            modificarCancion.setForeground(java.awt.Color.lightGray);
+            
+            modificarCancionAutor.setBackground(java.awt.Color.darkGray);
+            modificarCancionAutor.setForeground(java.awt.Color.lightGray);
+            
+            modificarCancionNombre.setBackground(java.awt.Color.darkGray);
+            modificarCancionNombre.setForeground(java.awt.Color.lightGray);
+            
+            nombreAutor.setBackground(java.awt.Color.darkGray);
+            nombreAutor.setForeground(java.awt.Color.lightGray);
+            
+            nombreAutorCanciones.setBackground(java.awt.Color.darkGray);
+            nombreAutorCanciones.setForeground(java.awt.Color.lightGray);
+            
+            nombreAutorCancionesField.setBackground(java.awt.Color.darkGray);
+            nombreAutorCancionesField.setForeground(java.awt.Color.lightGray);
+            
+            nombreAutorField.setBackground(java.awt.Color.darkGray);
+            nombreAutorField.setForeground(java.awt.Color.lightGray);
+            
+            nombreCancion.setBackground(java.awt.Color.darkGray);
+            nombreCancion.setForeground(java.awt.Color.lightGray);
+            
+            nombreCancionCanciones.setBackground(java.awt.Color.darkGray);
+            nombreCancionCanciones.setForeground(java.awt.Color.lightGray);
+            
+            nombreCancionCancionesField.setBackground(java.awt.Color.darkGray);
+            nombreCancionCancionesField.setForeground(java.awt.Color.lightGray);
+            
+            nombreCancionField.setBackground(java.awt.Color.darkGray);
+            nombreCancionField.setForeground(java.awt.Color.lightGray);
+            
+            nombreDuracion.setBackground(java.awt.Color.darkGray);
+            nombreDuracion.setForeground(java.awt.Color.lightGray);
+            
+            nombreDuracionField.setBackground(java.awt.Color.darkGray);
+            nombreDuracionField.setForeground(java.awt.Color.lightGray);
+            
+            nombreNCanciones.setBackground(java.awt.Color.darkGray);
+            nombreNCanciones.setForeground(java.awt.Color.lightGray);
+            
+            nombreNCancionesField.setBackground(java.awt.Color.darkGray);
+            nombreNCancionesField.setForeground(java.awt.Color.lightGray);
+            
+            salidaConsultas.setBackground(java.awt.Color.darkGray);
+            salidaConsultas.setForeground(java.awt.Color.lightGray);
+            
+            salidaConsultasTexto.setBackground(java.awt.Color.darkGray);
+            salidaConsultasTexto.setForeground(java.awt.Color.lightGray);
         }
     }//GEN-LAST:event_darkModeMousePressed
 
