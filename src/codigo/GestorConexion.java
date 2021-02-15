@@ -25,9 +25,9 @@ public class GestorConexion {
     //Aqui se inicia la conexion.
     public int iniciarConexion() {
 
-        String urlBBDD = "jdbc:mysql://localhost:3306/discograficaluisrioja?serverTimezone=UTC";
+        String urlBBDD = "jdbc:mysql://localhost:3306/ordenadoresluisrioja?serverTimezone=UTC";
         String user = "root";
-        String password = "1234";
+        String password = "";
 
         int aux = -1;
 

@@ -117,9 +117,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         darkMode.setBackground(java.awt.Color.darkGray);
         darkMode.setForeground(java.awt.Color.lightGray);
-        darkMode.setIcon(new javax.swing.ImageIcon(getClass().getResource("/codigo/light_16.png"))); // NOI18N
+        darkMode.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/light_16.png"))); // NOI18N
         darkMode.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        darkMode.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/codigo/dark_16.png"))); // NOI18N
+        darkMode.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/light_16.png"))); // NOI18N
+        darkMode.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/dark_16.png"))); // NOI18N
         darkMode.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 darkModeMousePressed(evt);
@@ -265,7 +266,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         insertarDatos.setForeground(java.awt.Color.lightGray);
         insertarDatos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         insertarDatos.setText("Insertar Datos en Album");
-        insertarDatos.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        insertarDatos.setBorder(new javax.swing.border.SoftBevelBorder(0));
         insertarDatos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         insertarDatos.setOpaque(true);
 
@@ -285,7 +286,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         insertarFecha.setForeground(java.awt.Color.lightGray);
         insertarFecha.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         insertarFecha.setText("Añadir/Borrar fecha");
-        insertarFecha.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        insertarFecha.setBorder(new javax.swing.border.SoftBevelBorder(0));
         insertarFecha.setOpaque(true);
 
         consultarDatos.setBackground(java.awt.Color.darkGray);
@@ -293,7 +294,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         consultarDatos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         consultarDatos.setText("Consultar Datos en Album");
         consultarDatos.setAlignmentX(1.0F);
-        consultarDatos.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        consultarDatos.setBorder(new javax.swing.border.SoftBevelBorder(0));
         consultarDatos.setOpaque(true);
 
         consultaAutorLabel.setBackground(java.awt.Color.darkGray);
@@ -308,7 +309,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         insertarDatosCancion.setForeground(java.awt.Color.lightGray);
         insertarDatosCancion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         insertarDatosCancion.setText("Insertar Datos en Canciones");
-        insertarDatosCancion.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        insertarDatosCancion.setBorder(new javax.swing.border.SoftBevelBorder(0));
         insertarDatosCancion.setOpaque(true);
 
         nombreCancionCanciones.setBackground(java.awt.Color.darkGray);
@@ -336,7 +337,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         consultarDatosCanciones.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         consultarDatosCanciones.setText("Consultar Datos en Canciones");
         consultarDatosCanciones.setAlignmentX(1.0F);
-        consultarDatosCanciones.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        consultarDatosCanciones.setBorder(new javax.swing.border.SoftBevelBorder(0));
         consultarDatosCanciones.setOpaque(true);
 
         modificarAlbumLabel.setBackground(java.awt.Color.darkGray);
@@ -348,7 +349,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         consultarDatos1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         consultarDatos1.setText("Modificar Cancion");
         consultarDatos1.setAlignmentX(1.0F);
-        consultarDatos1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        consultarDatos1.setBorder(new javax.swing.border.SoftBevelBorder(0));
         consultarDatos1.setOpaque(true);
 
         modificarCancion.setBackground(java.awt.Color.darkGray);
@@ -407,7 +408,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(insertarFecha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(BotonEncender, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
                         .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(fondoColorLayout.createSequentialGroup()
                                 .addComponent(BotonFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -415,7 +416,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                                 .addComponent(BotonFechaBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(fondoColorLayout.createSequentialGroup()
                                 .addComponent(BotonApagar, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 186, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 178, Short.MAX_VALUE)
                                 .addComponent(darkMode)))
                         .addGap(13, 13, 13))
                     .addGroup(fondoColorLayout.createSequentialGroup()
@@ -503,7 +504,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BotonEncender)
                     .addComponent(BotonApagar)
-                    .addComponent(darkMode))
+                    .addComponent(darkMode, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(insertarFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -670,7 +671,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             //Light Mode
             
             
-            darkMode.setBackground(java.awt.Color.white);
+            darkMode.setBackground(java.awt.Color.black);
             darkMode.setForeground(java.awt.Color.black);
             
             fondoColor.setBackground(java.awt.Color.white);
