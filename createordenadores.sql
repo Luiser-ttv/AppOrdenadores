@@ -33,10 +33,8 @@ CREATE TABLE perifericos(
 )ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE = utf8_bin;
 
 
-INSERT INTO album (titulo, autor, numero_canciones) VALUES 
-("Flags","Coldplay", 2), ("City of Stars","Lofi Fruits", 10), 
-("Reprise Rarities","Frank Sinatra", 5), 
-("Atom Bomb Baby","The Five Stars", 12);
+INSERT INTO componentes (procesador, disipador, placa_base, tarjeta_grafica, torre, marcas_componentes) VALUES 
+("Intel Core i","Noctua Silence","ROG ONE","Nvidia RTX3080","Silver One", 1),;
 
 INSERT INTO canciones (titulo, autor, duracion) VALUES 
 ("Paradise","Coldplay", "00:04:39"), 
