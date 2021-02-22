@@ -2,6 +2,7 @@ package codigo;
 
 import javax.swing.JLabel;
 import java.awt.Color;
+import java.util.ArrayList;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -31,6 +32,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         BotonConsultasCanciones.setEnabled(false);
         BotonConsultasCancionesAutor.setEnabled(false);
         BotonModificarAlbum.setEnabled(false);
+        InsertarDatosCombo.removeAllItems();
 
         salidaConsultas.setVisible(false);
         salidaConsultas.setSize(300, 300);
@@ -53,6 +55,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         nombreCancion = new javax.swing.JLabel();
         nombreAutor = new javax.swing.JLabel();
         nombreNCanciones = new javax.swing.JLabel();
+        InsertarDatosCombo = new javax.swing.JComboBox<>();
         nombreCancionField = new javax.swing.JTextField();
         nombreAutorField = new javax.swing.JTextField();
         nombreNCancionesField = new javax.swing.JTextField();
@@ -114,7 +117,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         insertarDatos.setForeground(java.awt.Color.lightGray);
         insertarDatos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         insertarDatos.setText("Insertar Datos en Componentes");
-        insertarDatos.setBorder(new javax.swing.border.SoftBevelBorder(0));
+        insertarDatos.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         insertarDatos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         insertarDatos.setOpaque(true);
 
@@ -129,6 +132,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         nombreNCanciones.setBackground(java.awt.Color.darkGray);
         nombreNCanciones.setForeground(java.awt.Color.lightGray);
         nombreNCanciones.setText("Placa Base:");
+
+        InsertarDatosCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         nombreCancionField.setBackground(java.awt.Color.darkGray);
         nombreCancionField.setForeground(java.awt.Color.lightGray);
@@ -274,7 +279,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         consultarDatos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         consultarDatos.setText("Consultar Datos en Album");
         consultarDatos.setAlignmentX(1.0F);
-        consultarDatos.setBorder(new javax.swing.border.SoftBevelBorder(0));
+        consultarDatos.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         consultarDatos.setOpaque(true);
 
         consultaAutorLabel.setBackground(java.awt.Color.darkGray);
@@ -289,7 +294,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         insertarDatosCancion.setForeground(java.awt.Color.lightGray);
         insertarDatosCancion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         insertarDatosCancion.setText("Insertar Datos en Canciones");
-        insertarDatosCancion.setBorder(new javax.swing.border.SoftBevelBorder(0));
+        insertarDatosCancion.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         insertarDatosCancion.setOpaque(true);
 
         nombreCancionCanciones.setBackground(java.awt.Color.darkGray);
@@ -317,7 +322,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         consultarDatosCanciones.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         consultarDatosCanciones.setText("Consultar Datos en Canciones");
         consultarDatosCanciones.setAlignmentX(1.0F);
-        consultarDatosCanciones.setBorder(new javax.swing.border.SoftBevelBorder(0));
+        consultarDatosCanciones.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         consultarDatosCanciones.setOpaque(true);
 
         modificarAlbumLabel.setBackground(java.awt.Color.darkGray);
@@ -329,7 +334,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         consultarDatos1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         consultarDatos1.setText("Modificar Cancion");
         consultarDatos1.setAlignmentX(1.0F);
-        consultarDatos1.setBorder(new javax.swing.border.SoftBevelBorder(0));
+        consultarDatos1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         consultarDatos1.setOpaque(true);
 
         modificarCancion.setBackground(java.awt.Color.darkGray);
@@ -420,10 +425,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                                     .addComponent(nombreAutor)
                                     .addComponent(nombreNCanciones))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(nombreCancionField)
-                                    .addComponent(nombreAutorField)
-                                    .addComponent(nombreNCancionesField, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(InsertarDatosCombo, 0, 144, Short.MAX_VALUE)
+                                    .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(nombreCancionField)
+                                        .addComponent(nombreAutorField)
+                                        .addComponent(nombreNCancionesField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)))
                                 .addGap(265, 265, 265)))
                         .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -506,7 +513,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(nombreNCancionesField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(nombreNCanciones))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(InsertarDatosCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                         .addComponent(BotonDatosAlbum)))
                 .addGap(12, 12, 12)
                 .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -577,6 +586,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             BotonConsultasCanciones.setEnabled(true);
             BotonConsultasCancionesAutor.setEnabled(true);
             BotonModificarAlbum.setEnabled(true);
+            fillComboBox();
         } else {
             System.out.println("Error en la conexion de la BBDD");
 
@@ -936,6 +946,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         gestor.modificarCancion(modificarCancionNombre.getText(), modificarCancionAutor.getText());
     }//GEN-LAST:event_BotonModificarAlbumActionPerformed
 
+    
+    private void fillComboBox(){
+    InsertarDatosCombo.removeAllItems();
+    
+    ArrayList<String> list = new ArrayList<String>();
+    list = gestor.comboComp();
+    
+        for (int i = 0; i < list.size(); i++) {
+            InsertarDatosCombo.addItem(list.get(i));
+        }
+    
+    
+    }
     /**
      * @param args the command line arguments
      */
@@ -984,6 +1007,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton BotonDatosCanciones;
     private javax.swing.JButton BotonEncender;
     private javax.swing.JButton BotonModificarAlbum;
+    private javax.swing.JComboBox<String> InsertarDatosCombo;
     private javax.swing.JTextField consultaAutor;
     private javax.swing.JTextField consultaAutorCanciones;
     private javax.swing.JLabel consultaAutorCancionesLabel;

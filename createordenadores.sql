@@ -33,11 +33,20 @@ CREATE TABLE perifericos(
 )ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE = utf8_bin;
 
 
-INSERT INTO componentes (procesador, disipador, placa_base, tarjeta_grafica, torre, marcas_componentes) VALUES 
-("Intel Core i","Noctua Silence","ROG ONE","Nvidia RTX3080","Silver One", 1),;
+INSERT INTO marcas (nombre) VALUES 
+("MSI"), 
+("ASUS"), 
+("Logitech"), 
+("Razer");
 
-INSERT INTO canciones (titulo, autor, duracion) VALUES 
-("Paradise","Coldplay", "00:04:39"), 
-("Sunset","Lofi Fruits", "00:02:49"), 
-("My Way","Frank Sinatra", "00:04:37"), 
-("Atom Bomb Baby","The Five Stars", "00:02:17");
+INSERT INTO componentes (procesador, disipador, placa_base, tarjeta_grafica, torre, marcas_componentes) VALUES 
+("Intel Core i7-10900K","MSI Cooling Force","MSI MAG B550","Nvidia RTX3080","Black Silver", 1),
+("Intel Core i5-10800K","MasterAir MA620P","ASUS ROG ONE","Nvidia RTX3060","Silver One", 2),
+("Intel Core i9-10900K","Noctua Silence","Bazooka Master","Nvidia RTX3090","G Tower", 3),
+("Intel Core i7-10900K","Razer Silence","Razer Master","Nvidia RTX3070","Razer Black Widow", 4);
+
+INSERT INTO perifericos (monitor, teclado, raton, auriculares, marcas_perifericos) VALUES 
+("MSI Optix MAG274QRF","VIGOR GK20","Clutch GM20 Elite","Immerse GH30 V2", 1),
+("22F-21.5","ROG STRIX SCOPE DELUXE","ROG Strix Impact II","ROG Delta White", 2),
+("LG 22MK600M-B","G G915 TKL","G 604","G733 LIGHTSPEED", 3),
+("223V7QDSB-21,5","Huntsman MINI Optico","Razer PRO CLICK","Kraken Tournament Edition", 4);

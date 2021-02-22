@@ -11,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -344,6 +345,38 @@ public class GestorConexion {
 
         }
 
+    }
+    
+    //Esta funcion servira para que se puedan seleccionar los datos desde los combo box
+    public ArrayList<String> comboComp() {
+        
+        ArrayList<String> list = new ArrayList<String>();
+        String query = "SELECT * FROM `marcas` ORDER BY `id_marcas`";
+        
+        
+        try {
+            
+            Statement sta = conn1.createStatement();
+            ResultSet rs = sta.executeQuery(query);
+            
+            while (rs.next()) {
+                
+                list.add(rs.getInt("id_marcas") + " - " + rs.getString("nombre"));
+            }
+            
+            rs.close();
+            sta.close();
+            
+            return list;
+            
+        } catch (SQLException ex) {
+            
+            System.out.println(ex.toString());
+            return null;
+            
+        } catch (Exception e) {
+            return null;
+        }
     }
     
     
