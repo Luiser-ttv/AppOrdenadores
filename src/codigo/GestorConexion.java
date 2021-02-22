@@ -82,14 +82,16 @@ public class GestorConexion {
     }
     
     //Con este metodo insertaremos nuevos datos en la tabla Canciones.
-    public void insertarCancion(String cancion, String autor, String duracion) {
+    public void insertarPerifericos(String monitor, String teclado, String raton, String auriculares, int marcas_perifericos) {
 
         Statement sta;
 
         try {
 
             sta = conn1.createStatement();
-            sta.executeUpdate("INSERT INTO canciones (titulo, autor, duracion) VALUES (" + "'" + cancion + "'" + ", " + "'" + autor + "'" + ", " + "'" + duracion + "'" + ");");
+            sta.executeUpdate("INSERT INTO perifericos (monitor, teclado, raton, auriculares, marcas_perifericos) VALUES"
+            +"('" + monitor + "', '" + teclado + "', '" + raton + "', '" + auriculares + "', '" + marcas_perifericos + "');");
+            
             sta.close();
 
         } catch (SQLException ex) {
@@ -99,8 +101,8 @@ public class GestorConexion {
 
     }
 
-    //Con este metodo consultaremos los albumes.
-    public String consultaAlbumes() {
+    //Con este metodo consultaremos los Perifericos.
+    public String consultaPerifericos() {
 
         Statement sta;
         String salidaAlbumes = "";
@@ -109,15 +111,15 @@ public class GestorConexion {
 
             sta = conn1.createStatement();
 
-            String query = "SELECT * FROM album;";
+            String query = "SELECT * FROM perifericos;";
             ResultSet rs = sta.executeQuery(query);
 
             while (rs.next()) {
                 request = ("\n --------Resultados:----------"
-                        + "\n Titulo: " + rs.getString("titulo")
-                        + "\n Autor: " + rs.getString("autor")
-                        + "\n Numero de canciones: "
-                        + rs.getString("numero_canciones")
+                        + "\n Monitor: " + rs.getString("monitor")
+                        + "\n Teclado: " + rs.getString("teclado")
+                        + "\n Raton: " + rs.getString("raton")
+                        + "\n Auriculares: " + rs.getString("auriculares")
                         + "\n -----------------------------------");
                 salidaAlbumes = salidaAlbumes + request;
                 
@@ -134,8 +136,8 @@ public class GestorConexion {
 
     }
     
-    //Con este metodo consultaremos las canciones.
-    public String consultaCanciones() {
+    //Con este metodo consultaremos los Componentes.
+    public String consultaComponentes() {
 
         Statement sta;
         String salidaCanciones = "";
@@ -145,15 +147,16 @@ public class GestorConexion {
 
             sta = conn1.createStatement();
 
-            String query = "SELECT * FROM canciones;";
+            String query = "SELECT * FROM componentes;";
             ResultSet rs = sta.executeQuery(query);
 
             while (rs.next()) {
                 request = ("\n --------Resultados:----------"
-                        + "\n Titulo: " + rs.getString("titulo")
-                        + "\n Autor: " + rs.getString("autor")
-                        + "\n Duracion: "
-                        + rs.getString("duracion")
+                        + "\n Procesador: " + rs.getString("procesador")
+                        + "\n Disipador: " + rs.getString("disipador")
+                        + "\n Placa Base: " + rs.getString("placa_base")
+                        + "\n Tarjeta Grafica: " + rs.getString("tarjeta_grafica")
+                        + "\n Torre: " + rs.getString("torre")
                         + "\n -----------------------------------");
                 salidaCanciones = salidaCanciones + request;
 
@@ -168,89 +171,26 @@ public class GestorConexion {
         }
 
     }
-
-    //Con este metodo consultaremos la tabla Album mediante Autor.
-    public String consulta_AlbumesAutor(String autor) {
-
-        String salidaConsulta = "";
-        String query = "SELECT * FROM album WHERE autor = ?;";
-
-        try {
- 
-            PreparedStatement pst = conn1.prepareStatement(query);
-            pst.setString(1, autor);
-
-            ResultSet rs = pst.executeQuery();
-
-            while (rs.next()) {
-                salidaConsulta = ("\n --------Resultados:----------"
-                        + "\n Titulo: " + rs.getString("titulo")
-                        + "\n Autor: " + rs.getString("autor")
-                        + "\n Nº Canciones: " + rs.getString("numero_canciones")
-                        + "\n -----------------------------------");
-
-            }
-
-            rs.close();
-            pst.close();
-            return salidaConsulta;
-        } catch (SQLException ex) {
-            return ex.toString();
-
-        }
-
-    }
     
-    //Con este metodo consultaremos la tabla Album mediante Titulo.
-    public String consulta_AlbumesTitulo(String titulo) {
+    //Con este metodo consultaremos la tabla Canciones mediante Titulo.
+    public String consulta_PerifericosMarca(String marcaperif) {
 
         String salidaConsulta = "";
-        String query = "SELECT * FROM album WHERE titulo = ?;";
+        String query = "SELECT * FROM perifericos WHERE marcas_perifericos = ?;";
 
         try {
- 
+
             PreparedStatement pst = conn1.prepareStatement(query);
-            pst.setString(1, titulo);
+            pst.setString(1, marcaperif);
 
             ResultSet rs = pst.executeQuery();
 
             while (rs.next()) {
                 salidaConsulta = ("\n --------Resultados:----------"
-                        + "\n Titulo: " + rs.getString("titulo")
-                        + "\n Autor: " + rs.getString("autor")
-                        + "\n Nº Canciones: " + rs.getString("numero_canciones")
-                        + "\n -----------------------------------");
-
-            }
-
-            rs.close();
-            pst.close();
-            return salidaConsulta;
-        } catch (SQLException ex) {
-            return ex.toString();
-
-        }
-
-    }
-
-    //Con este metodo consultaremos la tabla Canciones mediante Autor.
-    public String consulta_CancionesAutor(String autor) {
-
-        String salidaConsulta = "";
-        String query = "SELECT * FROM canciones WHERE autor = ?;";
-
-        try {
-
-            PreparedStatement pst = conn1.prepareStatement(query);
-            pst.setString(1, autor);
-
-            ResultSet rs = pst.executeQuery();
-
-            while (rs.next()) {
-                salidaConsulta = ("\n --------Resultados:----------"
-                        + "\n Titulo: " + rs.getString("titulo")
-                        + "\n Autor: " + rs.getString("autor")
-                        + "\n Duracion: " + rs.getString("duracion")
+                        + "\n Monitor: " + rs.getString("monitor")
+                        + "\n Teclado: " + rs.getString("teclado")
+                        + "\n Raton: " + rs.getString("raton")
+                        + "\n Auriculares: " + rs.getString("auriculares")
                         + "\n -----------------------------------");
 
             }
@@ -266,23 +206,25 @@ public class GestorConexion {
     }
     
     //Con este metodo consultaremos la tabla Canciones mediante Titulo.
-    public String consulta_CancionesTitulo(String titulo) {
+    public String consulta_ComponentesMarca(String marcacomp) {
 
         String salidaConsulta = "";
-        String query = "SELECT * FROM canciones WHERE titulo = ?;";
+        String query = "SELECT * FROM componentes WHERE marcas_componentes = ?;";
 
         try {
 
             PreparedStatement pst = conn1.prepareStatement(query);
-            pst.setString(1, titulo);
+            pst.setString(1, marcacomp);
 
             ResultSet rs = pst.executeQuery();
 
             while (rs.next()) {
                 salidaConsulta = ("\n --------Resultados:----------"
-                        + "\n Titulo: " + rs.getString("titulo")
-                        + "\n Autor: " + rs.getString("autor")
-                        + "\n Duracion: " + rs.getString("duracion")
+                        + "\n Procesador: " + rs.getString("procesador")
+                        + "\n Disipador: " + rs.getString("disipador")
+                        + "\n Placa Base: " + rs.getString("placa_base")
+                        + "\n Tarjeta Grafica: " + rs.getString("tarjeta_grafica")
+                        + "\n Torre: " + rs.getString("torre")
                         + "\n -----------------------------------");
 
             }
@@ -317,37 +259,38 @@ public class GestorConexion {
     
     //Esta funcion servira para que se puedan seleccionar los datos desde los combo box
     public ArrayList<String> comboComp() {
-        
-        ArrayList<String> list = new ArrayList<String>();
-        String query = "SELECT * FROM `marcas` ORDER BY `id_marcas`";
-        
-        
-        try {
-            
-            Statement sta = conn1.createStatement();
-            ResultSet rs = sta.executeQuery(query);
-            
-            while (rs.next()) {
-                
-                list.add(rs.getInt("id_marcas") + " - " + rs.getString("nombre"));
+
+                ArrayList<String> list = new ArrayList<String>();
+                String query = "SELECT * FROM `marcas` ORDER BY `id_marcas`";
+
+
+                try {
+
+                    Statement sta = conn1.createStatement();
+                    ResultSet rs = sta.executeQuery(query);
+
+                while (rs.next()) {
+
+                    list.add(rs.getInt("id_marcas") + " - " + rs.getString("nombre"));
+                }
+
+                rs.close();
+                sta.close();
+
+                return list;
+
+            } catch (SQLException ex) {
+
+                System.out.println(ex.toString());
+                return null;
+
+            } catch (Exception e) {
+                return null;
             }
-            
-            rs.close();
-            sta.close();
-            
-            return list;
-            
-        } catch (SQLException ex) {
-            
-            System.out.println(ex.toString());
-            return null;
-            
-        } catch (Exception e) {
-            return null;
         }
-    }
-    
-    
+
+            
+
     //Esta funcion se queda hecha para el proyecto final, pero por el momento no tendra uso alguno.
     public void insertarConCommit() {
 
