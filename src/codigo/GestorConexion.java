@@ -59,51 +59,19 @@ public class GestorConexion {
         }
         return aux;
     }
+   
 
-    //Con este metodo añadiremos la columna de fecha de publicacion.
-    public void aniadirColumna() {
-
-        Statement sta;
-
-        try {
-            sta = conn1.createStatement();
-            sta.executeUpdate("ALTER TABLE album ADD fecha_publicacion YEAR;");
-            sta.close();
-
-        } catch (SQLException ex) {
-            System.out.println("Error al introducir la consulta añadir columna fecha");
-        }
-
-    }
-
-    
-    //Con este metodo borraremos la columna creada anteriormente.
-    public void borrarColumna() {
+    //Con este metodo insertaremos nuevos datos en la tabla Componentes.
+    public void insertarComponentes(String procesador, String disipador, String placa_base, String tarjeta_grafica, String torre, int marcas_componentes) {
 
         Statement sta;
 
         try {
 
             sta = conn1.createStatement();
-            sta.executeUpdate("ALTER TABLE album DROP fecha_publicacion;");
-            sta.close();
-
-        } catch (SQLException ex) {
-            System.out.println("Error al eliminar la columna fecha");
-
-        }
-
-    }
-
-    //Con este metodo insertaremos nuevos datos en la tabla Album.
-    public void insertarAlbum(String cancion, String autor, String NCanciones) {
-
-        Statement sta;
-
-        try {
-
-            sta = conn1.createStatement();
-            sta.executeUpdate("INSERT INTO album (titulo, autor, numero_canciones) VALUES (" + "'" + cancion + "'" + ", " + "'" + autor + "'" + ", " + "'" + NCanciones + "'" + ");");
+            sta.executeUpdate("INSERT INTO componentes (procesador, disipador, placa_base, tarjeta_grafica, torre, marcas_componentes) VALUES"
+            +"('" + procesador + "', '" + disipador + "', '" + placa_base + "', '" + tarjeta_grafica + "', '" + torre + "', '" + marcas_componentes + "');");
+            
             sta.close();
 
         } catch (SQLException ex) {
