@@ -81,7 +81,7 @@ public class GestorConexion {
 
     }
     
-    //Con este metodo insertaremos nuevos datos en la tabla Canciones.
+    //Con este metodo insertaremos nuevos datos en la tabla Perifericos.
     public void insertarPerifericos(String monitor, String teclado, String raton, String auriculares, int marcas_perifericos) {
 
         Statement sta;
@@ -172,7 +172,7 @@ public class GestorConexion {
 
     }
     
-    //Con este metodo consultaremos la tabla Canciones mediante Titulo.
+    //Con este metodo consultaremos la tabla Perifericos segun la marca.
     public String consulta_PerifericosMarca(String marcaperif) {
 
         String salidaConsulta = "";
@@ -205,7 +205,7 @@ public class GestorConexion {
 
     }
     
-    //Con este metodo consultaremos la tabla Canciones mediante Titulo.
+    //Con este metodo consultaremos la tabla Componentes segun la marca.
     public String consulta_ComponentesMarca(String marcacomp) {
 
         String salidaConsulta = "";
@@ -239,15 +239,15 @@ public class GestorConexion {
 
     }
     
-    //Con este metodo modificaremos el Titulo de canciones mediante el Autor.
-    public void modificarCancion(String nuevoTitulo, String autor) {
+    //Con este metodo modificaremos la Torre segun la Marca.
+    public void modificarTorre(String nuevaTorre, int marcas_comps) {
 
          Statement sta;
 
         try {
 
             sta = conn1.createStatement();
-            sta.executeUpdate("UPDATE canciones SET titulo = " + "'" + nuevoTitulo + "'" + " WHERE autor =" + "'" + autor + "'" + ";" );
+            sta.executeUpdate("UPDATE componentes SET torre = " + "'" + nuevaTorre + "'" + " WHERE marcas_componentes ="  + marcas_comps  + ";" );
             sta.close();
 
         } catch (SQLException ex) {
@@ -291,8 +291,8 @@ public class GestorConexion {
 
             
 
-    //Esta funcion se queda hecha para el proyecto final, pero por el momento no tendra uso alguno.
-    public void insertarConCommit() {
+    //Esta funcion borrara los datos de componentes y de perifericos segun la marca, si falla una de las dos consultas, la otra no se aplicara.
+    public void deletearConCommit(int marcaDelete) {
 
         Statement sta;
 
@@ -302,8 +302,8 @@ public class GestorConexion {
 
             sta = conn1.createStatement();
 
-            sta.executeUpdate("INSERT INTO album (titulo, autor) VALUES ('Outro Chill', 'Hora de aventuras');");
-            sta.executeUpdate("INSERT INTO album (titulo, autor) VALUES ('Outro Chill II', 'Adventure Time');");
+            sta.executeUpdate("DELETE FROM componentes WHERE marcas_componentes =" + marcaDelete + " ;");
+            sta.executeUpdate("DELETE FROM perifericos WHERE marcas_perifericos =" + marcaDelete + " ;");
 
             sta.close();
 

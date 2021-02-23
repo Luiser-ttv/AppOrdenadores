@@ -24,16 +24,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         initComponents();
         BotonApagar.setEnabled(false);
         BotonInsertarComp.setEnabled(false);
-        BotonConsultarAlbum.setEnabled(false);
-        BotonConsultarCanciones.setEnabled(false);
+        BotonConsultarPerifericos.setEnabled(false);
+        BotonConsultarComponentes.setEnabled(false);
         BotonInsertarPerif.setEnabled(false);
         PreparedComp.setEnabled(false);
         PreparedPerif.setEnabled(false);
-        BotonModificarAlbum.setEnabled(false);
+        BotonModificarTorre.setEnabled(false);
+        BotonEliminar.setEnabled(false);
         InsertarDatosComp.removeAllItems();
         InsertarDatosPerif.removeAllItems();
         ConsultaPerif.removeAllItems();
         ConsultaComp.removeAllItems();
+        TorreCombo.removeAllItems();
+        BorrarCombo.removeAllItems();
         
         salidaConsultas.setVisible(false);
         salidaConsultas.setSize(300, 300);
@@ -52,6 +55,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         salidaConsultasTexto = new javax.swing.JTextArea();
         fondoColor = new javax.swing.JPanel();
+        darkMode = new javax.swing.JToggleButton();
+        BotonApagar = new javax.swing.JButton();
+        BotonEncender = new javax.swing.JButton();
         InsertarDatosComp = new javax.swing.JComboBox<>();
         LabelComboInsComp = new javax.swing.JLabel();
         insertarDatosComponentes = new javax.swing.JLabel();
@@ -86,17 +92,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         consultaMarcasComp = new javax.swing.JLabel();
         ConsultaComp = new javax.swing.JComboBox<>();
         PreparedComp = new javax.swing.JButton();
-        darkMode = new javax.swing.JToggleButton();
-        BotonApagar = new javax.swing.JButton();
-        BotonEncender = new javax.swing.JButton();
-        BotonConsultarAlbum = new javax.swing.JButton();
-        BotonConsultarCanciones = new javax.swing.JButton();
-        BotonModificarAlbum = new javax.swing.JButton();
-        modificarAlbumLabel = new javax.swing.JLabel();
-        consultarDatos1 = new javax.swing.JLabel();
-        modificarCancion = new javax.swing.JLabel();
-        modificarCancionAutor = new javax.swing.JTextField();
-        modificarCancionNombre = new javax.swing.JTextField();
+        modificarTorreLabel = new javax.swing.JLabel();
+        modificarTorreMarcaLabel = new javax.swing.JLabel();
+        modificarTorreNueva = new javax.swing.JLabel();
+        TorreCombo = new javax.swing.JComboBox<>();
+        nuevaTorreField = new javax.swing.JTextField();
+        BotonModificarTorre = new javax.swing.JButton();
+        eliminarPorMarca = new javax.swing.JLabel();
+        borrarMarcaLabel = new javax.swing.JLabel();
+        BorrarCombo = new javax.swing.JComboBox<>();
+        BotonEliminar = new javax.swing.JButton();
+        BotonConsultarPerifericos = new javax.swing.JButton();
+        BotonConsultarComponentes = new javax.swing.JButton();
 
         salidaConsultasTexto.setColumns(20);
         salidaConsultasTexto.setRows(5);
@@ -116,6 +123,39 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         fondoColor.setBackground(new java.awt.Color(102, 102, 102));
+
+        darkMode.setBackground(java.awt.Color.darkGray);
+        darkMode.setForeground(java.awt.Color.lightGray);
+        darkMode.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/light_16.png"))); // NOI18N
+        darkMode.setSelected(true);
+        darkMode.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        darkMode.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/light_16.png"))); // NOI18N
+        darkMode.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/dark_16.png"))); // NOI18N
+        darkMode.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                darkModeMousePressed(evt);
+            }
+        });
+
+        BotonApagar.setBackground(java.awt.Color.darkGray);
+        BotonApagar.setForeground(java.awt.Color.lightGray);
+        BotonApagar.setText("Apagar");
+        BotonApagar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BotonApagar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonApagarActionPerformed(evt);
+            }
+        });
+
+        BotonEncender.setBackground(java.awt.Color.darkGray);
+        BotonEncender.setForeground(java.awt.Color.lightGray);
+        BotonEncender.setText("Encender/Actualizar");
+        BotonEncender.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BotonEncender.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonEncenderActionPerformed(evt);
+            }
+        });
 
         InsertarDatosComp.setBackground(java.awt.Color.darkGray);
         InsertarDatosComp.setForeground(java.awt.Color.lightGray);
@@ -283,90 +323,84 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        darkMode.setBackground(java.awt.Color.darkGray);
-        darkMode.setForeground(java.awt.Color.lightGray);
-        darkMode.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/light_16.png"))); // NOI18N
-        darkMode.setSelected(true);
-        darkMode.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        darkMode.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/light_16.png"))); // NOI18N
-        darkMode.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/dark_16.png"))); // NOI18N
-        darkMode.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                darkModeMousePressed(evt);
-            }
-        });
+        modificarTorreLabel.setBackground(java.awt.Color.darkGray);
+        modificarTorreLabel.setForeground(java.awt.Color.lightGray);
+        modificarTorreLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        modificarTorreLabel.setText("Modificar Torre");
+        modificarTorreLabel.setAlignmentX(1.0F);
+        modificarTorreLabel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        modificarTorreLabel.setOpaque(true);
 
-        BotonApagar.setBackground(java.awt.Color.darkGray);
-        BotonApagar.setForeground(java.awt.Color.lightGray);
-        BotonApagar.setText("Apagar");
-        BotonApagar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BotonApagar.addActionListener(new java.awt.event.ActionListener() {
+        modificarTorreMarcaLabel.setBackground(java.awt.Color.darkGray);
+        modificarTorreMarcaLabel.setForeground(java.awt.Color.lightGray);
+        modificarTorreMarcaLabel.setText("Marca:");
+
+        modificarTorreNueva.setBackground(java.awt.Color.darkGray);
+        modificarTorreNueva.setForeground(java.awt.Color.lightGray);
+        modificarTorreNueva.setText("Torre:");
+
+        TorreCombo.setBackground(java.awt.Color.darkGray);
+        TorreCombo.setForeground(java.awt.Color.lightGray);
+        TorreCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        nuevaTorreField.setBackground(java.awt.Color.darkGray);
+        nuevaTorreField.setForeground(java.awt.Color.lightGray);
+
+        BotonModificarTorre.setBackground(java.awt.Color.darkGray);
+        BotonModificarTorre.setForeground(java.awt.Color.lightGray);
+        BotonModificarTorre.setText("Modificar");
+        BotonModificarTorre.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BotonModificarTorre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonApagarActionPerformed(evt);
+                BotonModificarTorreActionPerformed(evt);
             }
         });
 
-        BotonEncender.setBackground(java.awt.Color.darkGray);
-        BotonEncender.setForeground(java.awt.Color.lightGray);
-        BotonEncender.setText("Encender/Actualizar");
-        BotonEncender.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BotonEncender.addActionListener(new java.awt.event.ActionListener() {
+        eliminarPorMarca.setBackground(java.awt.Color.darkGray);
+        eliminarPorMarca.setForeground(java.awt.Color.lightGray);
+        eliminarPorMarca.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        eliminarPorMarca.setText("Elimina por Marca");
+        eliminarPorMarca.setAlignmentX(1.0F);
+        eliminarPorMarca.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        eliminarPorMarca.setOpaque(true);
+
+        borrarMarcaLabel.setBackground(java.awt.Color.darkGray);
+        borrarMarcaLabel.setForeground(java.awt.Color.lightGray);
+        borrarMarcaLabel.setText("Marca:");
+
+        BorrarCombo.setBackground(java.awt.Color.darkGray);
+        BorrarCombo.setForeground(java.awt.Color.lightGray);
+        BorrarCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        BotonEliminar.setBackground(java.awt.Color.darkGray);
+        BotonEliminar.setForeground(java.awt.Color.lightGray);
+        BotonEliminar.setText("Eliminar");
+        BotonEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BotonEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonEncenderActionPerformed(evt);
+                BotonEliminarActionPerformed(evt);
             }
         });
 
-        BotonConsultarAlbum.setBackground(java.awt.Color.darkGray);
-        BotonConsultarAlbum.setForeground(java.awt.Color.lightGray);
-        BotonConsultarAlbum.setText("Consultar Perifericos");
-        BotonConsultarAlbum.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BotonConsultarAlbum.addActionListener(new java.awt.event.ActionListener() {
+        BotonConsultarPerifericos.setBackground(java.awt.Color.darkGray);
+        BotonConsultarPerifericos.setForeground(java.awt.Color.lightGray);
+        BotonConsultarPerifericos.setText("Consultar Perifericos");
+        BotonConsultarPerifericos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BotonConsultarPerifericos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonConsultarAlbumActionPerformed(evt);
+                BotonConsultarPerifericosActionPerformed(evt);
             }
         });
 
-        BotonConsultarCanciones.setBackground(java.awt.Color.darkGray);
-        BotonConsultarCanciones.setForeground(java.awt.Color.lightGray);
-        BotonConsultarCanciones.setText("Consultar Componentes");
-        BotonConsultarCanciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BotonConsultarCanciones.addActionListener(new java.awt.event.ActionListener() {
+        BotonConsultarComponentes.setBackground(java.awt.Color.darkGray);
+        BotonConsultarComponentes.setForeground(java.awt.Color.lightGray);
+        BotonConsultarComponentes.setText("Consultar Componentes");
+        BotonConsultarComponentes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BotonConsultarComponentes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonConsultarCancionesActionPerformed(evt);
+                BotonConsultarComponentesActionPerformed(evt);
             }
         });
-
-        BotonModificarAlbum.setBackground(java.awt.Color.darkGray);
-        BotonModificarAlbum.setForeground(java.awt.Color.lightGray);
-        BotonModificarAlbum.setText("Modificar");
-        BotonModificarAlbum.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BotonModificarAlbum.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonModificarAlbumActionPerformed(evt);
-            }
-        });
-
-        modificarAlbumLabel.setBackground(java.awt.Color.darkGray);
-        modificarAlbumLabel.setForeground(java.awt.Color.lightGray);
-        modificarAlbumLabel.setText("Autor:");
-
-        consultarDatos1.setBackground(java.awt.Color.darkGray);
-        consultarDatos1.setForeground(java.awt.Color.lightGray);
-        consultarDatos1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        consultarDatos1.setText("Modificar Torre");
-        consultarDatos1.setAlignmentX(1.0F);
-        consultarDatos1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        consultarDatos1.setOpaque(true);
-
-        modificarCancion.setBackground(java.awt.Color.darkGray);
-        modificarCancion.setForeground(java.awt.Color.lightGray);
-        modificarCancion.setText("Nombre:");
-
-        modificarCancionAutor.setBackground(java.awt.Color.darkGray);
-        modificarCancionAutor.setForeground(java.awt.Color.lightGray);
-
-        modificarCancionNombre.setBackground(java.awt.Color.darkGray);
-        modificarCancionNombre.setForeground(java.awt.Color.lightGray);
 
         javax.swing.GroupLayout fondoColorLayout = new javax.swing.GroupLayout(fondoColor);
         fondoColor.setLayout(fondoColorLayout);
@@ -431,37 +465,38 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondoColorLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(fondoColorLayout.createSequentialGroup()
-                                            .addGap(69, 69, 69)
-                                            .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(consultarDatos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
-                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondoColorLayout.createSequentialGroup()
-                                                    .addComponent(consultaMarcasPerif)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(ConsultaPerif, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addComponent(consultarDatosPerif, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(PreparedPerif, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                        .addComponent(PreparedComp, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondoColorLayout.createSequentialGroup()
-                                                .addComponent(modificarAlbumLabel)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(modificarCancionAutor, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(BotonModificarAlbum, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(consultarDatos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondoColorLayout.createSequentialGroup()
-                                            .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addComponent(consultarDatos1, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGroup(fondoColorLayout.createSequentialGroup()
-                                                    .addComponent(modificarCancion)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(modificarCancionNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                            .addGap(2, 2, 2)))
+                                            .addComponent(consultaMarcasPerif)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(ConsultaPerif, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(consultarDatosPerif, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(PreparedPerif, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(PreparedComp, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(BotonModificarTorre, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondoColorLayout.createSequentialGroup()
                                         .addComponent(consultaMarcasComp)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(ConsultaComp, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                        .addComponent(ConsultaComp, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(modificarTorreLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondoColorLayout.createSequentialGroup()
+                                        .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondoColorLayout.createSequentialGroup()
+                                                .addComponent(modificarTorreMarcaLabel)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                            .addGroup(fondoColorLayout.createSequentialGroup()
+                                                .addComponent(modificarTorreNueva)
+                                                .addGap(5, 5, 5)))
+                                        .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(nuevaTorreField)
+                                            .addComponent(TorreCombo, 0, 151, Short.MAX_VALUE)))
+                                    .addComponent(BotonEliminar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(eliminarPorMarca, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondoColorLayout.createSequentialGroup()
+                                        .addComponent(borrarMarcaLabel)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(BorrarCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                     .addGroup(fondoColorLayout.createSequentialGroup()
                         .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(fondoColorLayout.createSequentialGroup()
@@ -469,9 +504,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                                 .addComponent(insertarDatosComponentes, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(fondoColorLayout.createSequentialGroup()
                                 .addGap(234, 234, 234)
-                                .addComponent(BotonConsultarCanciones)
+                                .addComponent(BotonConsultarComponentes)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(BotonConsultarAlbum, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(BotonConsultarPerifericos, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -527,7 +562,22 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                                     .addComponent(InsertarTeclado)))
                             .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(insertarMonitor)
-                                .addComponent(monitorField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(monitorField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(InsertarRaton)
+                            .addComponent(RatonField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(InsertarAuriculares)
+                            .addComponent(AuricularesField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(10, 10, 10)
+                        .addComponent(BotonInsertarPerif)
+                        .addGap(9, 9, 9)
+                        .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(BotonConsultarPerifericos)
+                            .addComponent(BotonConsultarComponentes))
+                        .addContainerGap())
                     .addGroup(fondoColorLayout.createSequentialGroup()
                         .addComponent(consultarDatosPerif, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(4, 4, 4)
@@ -544,33 +594,27 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                             .addComponent(ConsultaComp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(PreparedComp)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(consultarDatos1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(modificarTorreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(modificarTorreMarcaLabel)
+                            .addComponent(TorreCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(modificarCancionNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(modificarCancion))
+                            .addComponent(nuevaTorreField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(modificarTorreNueva))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BotonModificarTorre)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(eliminarPorMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(modificarCancionAutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(modificarAlbumLabel))
+                            .addComponent(borrarMarcaLabel)
+                            .addComponent(BorrarCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(BotonModificarAlbum)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(InsertarRaton)
-                    .addComponent(RatonField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(InsertarAuriculares)
-                    .addComponent(AuricularesField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
-                .addComponent(BotonInsertarPerif)
-                .addGap(9, 9, 9)
-                .addGroup(fondoColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BotonConsultarAlbum)
-                    .addComponent(BotonConsultarCanciones))
-                .addContainerGap())
+                        .addComponent(BotonEliminar)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -594,12 +638,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             BotonEncender.setEnabled(true);
             BotonApagar.setEnabled(true);
             BotonInsertarComp.setEnabled(true);
-            BotonConsultarAlbum.setEnabled(true);
-            BotonConsultarCanciones.setEnabled(true);
+            BotonConsultarPerifericos.setEnabled(true);
+            BotonConsultarComponentes.setEnabled(true);
             BotonInsertarPerif.setEnabled(true);
             PreparedComp.setEnabled(true);
             PreparedPerif.setEnabled(true);
-            BotonModificarAlbum.setEnabled(true);
+            BotonModificarTorre.setEnabled(true);
+            BotonEliminar.setEnabled(true);
             fillComboComp();
         } else {
             System.out.println("Error en la conexion de la BBDD");
@@ -616,12 +661,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             BotonApagar.setEnabled(false);
             BotonEncender.setEnabled(true);
             BotonInsertarComp.setEnabled(false);
-            BotonConsultarAlbum.setEnabled(false);
-            BotonConsultarCanciones.setEnabled(false);
+            BotonConsultarPerifericos.setEnabled(false);
+            BotonConsultarComponentes.setEnabled(false);
             BotonInsertarPerif.setEnabled(false);
             PreparedComp.setEnabled(false);
             PreparedPerif.setEnabled(false);
-            BotonModificarAlbum.setEnabled(false);
+            BotonModificarTorre.setEnabled(false);
+            BotonEliminar.setEnabled(false);
             
         } else {
             System.out.println("Error al cerrar la conexion");
@@ -647,11 +693,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             BotonInsertarComp.setBackground(java.awt.Color.white);
             BotonInsertarComp.setForeground(java.awt.Color.black);
             
-            BotonConsultarAlbum.setBackground(java.awt.Color.white);
-            BotonConsultarAlbum.setForeground(java.awt.Color.black);
+            BotonConsultarPerifericos.setBackground(java.awt.Color.white);
+            BotonConsultarPerifericos.setForeground(java.awt.Color.black);
             
-            BotonConsultarCanciones.setBackground(java.awt.Color.white);
-            BotonConsultarCanciones.setForeground(java.awt.Color.black);
+            BotonConsultarComponentes.setBackground(java.awt.Color.white);
+            BotonConsultarComponentes.setForeground(java.awt.Color.black);
             
             PreparedPerif.setBackground(java.awt.Color.white);
             PreparedPerif.setForeground(java.awt.Color.black);
@@ -665,8 +711,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             BotonInsertarPerif.setBackground(java.awt.Color.white);
             BotonInsertarPerif.setForeground(java.awt.Color.black);
             
-            BotonModificarAlbum.setBackground(java.awt.Color.white);
-            BotonModificarAlbum.setForeground(java.awt.Color.black);
+            BotonModificarTorre.setBackground(java.awt.Color.white);
+            BotonModificarTorre.setForeground(java.awt.Color.black);
             
             consultaMarcasPerif.setBackground(java.awt.Color.white);
             consultaMarcasPerif.setForeground(java.awt.Color.black);
@@ -677,8 +723,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             consultarDatos.setBackground(java.awt.Color.white);
             consultarDatos.setForeground(java.awt.Color.black);
             
-            consultarDatos1.setBackground(java.awt.Color.white);
-            consultarDatos1.setForeground(java.awt.Color.black);
+            modificarTorreLabel.setBackground(java.awt.Color.white);
+            modificarTorreLabel.setForeground(java.awt.Color.black);
             
             consultarDatosPerif.setBackground(java.awt.Color.white);
             consultarDatosPerif.setForeground(java.awt.Color.black);
@@ -689,17 +735,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             insertarDatosPerifericos.setBackground(java.awt.Color.white);
             insertarDatosPerifericos.setForeground(java.awt.Color.black);
             
-            modificarAlbumLabel.setBackground(java.awt.Color.white);
-            modificarAlbumLabel.setForeground(java.awt.Color.black);
+            modificarTorreNueva.setBackground(java.awt.Color.white);
+            modificarTorreNueva.setForeground(java.awt.Color.black);
             
-            modificarCancion.setBackground(java.awt.Color.white);
-            modificarCancion.setForeground(java.awt.Color.black);
+            modificarTorreMarcaLabel.setBackground(java.awt.Color.white);
+            modificarTorreMarcaLabel.setForeground(java.awt.Color.black);
             
-            modificarCancionAutor.setBackground(java.awt.Color.white);
-            modificarCancionAutor.setForeground(java.awt.Color.black);
-            
-            modificarCancionNombre.setBackground(java.awt.Color.white);
-            modificarCancionNombre.setForeground(java.awt.Color.black);
+            nuevaTorreField.setBackground(java.awt.Color.white);
+            nuevaTorreField.setForeground(java.awt.Color.black);
             
             InsertarDisipador.setBackground(java.awt.Color.white);
             InsertarDisipador.setForeground(java.awt.Color.black);
@@ -758,6 +801,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             InsertarDatosPerif.setBackground(java.awt.Color.white);
             InsertarDatosPerif.setForeground(java.awt.Color.black);
             
+            BotonEliminar.setBackground(java.awt.Color.white);
+            BotonEliminar.setForeground(java.awt.Color.black);
+            
             
         } else {
             
@@ -776,11 +822,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             BotonInsertarComp.setBackground(java.awt.Color.darkGray);
             BotonInsertarComp.setForeground(java.awt.Color.lightGray);
             
-            BotonConsultarAlbum.setBackground(java.awt.Color.darkGray);
-            BotonConsultarAlbum.setForeground(java.awt.Color.lightGray);
+            BotonConsultarPerifericos.setBackground(java.awt.Color.darkGray);
+            BotonConsultarPerifericos.setForeground(java.awt.Color.lightGray);
             
-            BotonConsultarCanciones.setBackground(java.awt.Color.darkGray);
-            BotonConsultarCanciones.setForeground(java.awt.Color.lightGray);
+            BotonConsultarComponentes.setBackground(java.awt.Color.darkGray);
+            BotonConsultarComponentes.setForeground(java.awt.Color.lightGray);
             
             PreparedPerif.setBackground(java.awt.Color.darkGray);
             PreparedPerif.setForeground(java.awt.Color.lightGray);
@@ -794,8 +840,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             BotonInsertarPerif.setBackground(java.awt.Color.darkGray);
             BotonInsertarPerif.setForeground(java.awt.Color.lightGray);
             
-            BotonModificarAlbum.setBackground(java.awt.Color.darkGray);
-            BotonModificarAlbum.setForeground(java.awt.Color.lightGray);
+            BotonModificarTorre.setBackground(java.awt.Color.darkGray);
+            BotonModificarTorre.setForeground(java.awt.Color.lightGray);
             
             consultaMarcasPerif.setBackground(java.awt.Color.darkGray);
             consultaMarcasPerif.setForeground(java.awt.Color.lightGray);
@@ -806,8 +852,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             consultarDatos.setBackground(java.awt.Color.darkGray);
             consultarDatos.setForeground(java.awt.Color.lightGray);
             
-            consultarDatos1.setBackground(java.awt.Color.darkGray);
-            consultarDatos1.setForeground(java.awt.Color.lightGray);
+            modificarTorreLabel.setBackground(java.awt.Color.darkGray);
+            modificarTorreLabel.setForeground(java.awt.Color.lightGray);
             
             consultarDatosPerif.setBackground(java.awt.Color.darkGray);
             consultarDatosPerif.setForeground(java.awt.Color.lightGray);
@@ -818,17 +864,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             insertarDatosPerifericos.setBackground(java.awt.Color.darkGray);
             insertarDatosPerifericos.setForeground(java.awt.Color.lightGray);
             
-            modificarAlbumLabel.setBackground(java.awt.Color.darkGray);
-            modificarAlbumLabel.setForeground(java.awt.Color.lightGray);
+            modificarTorreNueva.setBackground(java.awt.Color.darkGray);
+            modificarTorreNueva.setForeground(java.awt.Color.lightGray);
             
-            modificarCancion.setBackground(java.awt.Color.darkGray);
-            modificarCancion.setForeground(java.awt.Color.lightGray);
+            modificarTorreMarcaLabel.setBackground(java.awt.Color.darkGray);
+            modificarTorreMarcaLabel.setForeground(java.awt.Color.lightGray);
             
-            modificarCancionAutor.setBackground(java.awt.Color.darkGray);
-            modificarCancionAutor.setForeground(java.awt.Color.lightGray);
-            
-            modificarCancionNombre.setBackground(java.awt.Color.darkGray);
-            modificarCancionNombre.setForeground(java.awt.Color.lightGray);
+            nuevaTorreField.setBackground(java.awt.Color.darkGray);
+            nuevaTorreField.setForeground(java.awt.Color.lightGray);
             
             InsertarDisipador.setBackground(java.awt.Color.darkGray);
             InsertarDisipador.setForeground(java.awt.Color.lightGray);
@@ -886,66 +929,95 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             
             InsertarDatosPerif.setBackground(java.awt.Color.darkGray);
             InsertarDatosPerif.setForeground(java.awt.Color.lightGray);
+            
+            BotonEliminar.setBackground(java.awt.Color.darkGray);
+            BotonEliminar.setForeground(java.awt.Color.lightGray);
         }
     }//GEN-LAST:event_darkModeMousePressed
 
     private void BotonInsertarCompActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonInsertarCompActionPerformed
+        //Creamos un String para que lea la informacion del ComboBox.
         String idComp = (String)InsertarDatosComp.getSelectedItem();
+        //Convertiremos el String a integer y separaremos con un Split y seleccionamos la primera parte con [0] que es el numero de la marca.
         int idComponentes = Integer.parseInt(idComp.split(" ")[0]);
         gestor.insertarComponentes(ProcesadorField.getText(), DisipadorField.getText(), PlacaBaseField.getText(), GraficaField.getText(), TorreField.getText(), idComponentes);
 
     }//GEN-LAST:event_BotonInsertarCompActionPerformed
 
-    private void BotonConsultarAlbumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonConsultarAlbumActionPerformed
+    private void BotonConsultarPerifericosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonConsultarPerifericosActionPerformed
 
         salidaConsultasTexto.setText(gestor.consultaPerifericos());
         salidaConsultas.setVisible(true);
 
-    }//GEN-LAST:event_BotonConsultarAlbumActionPerformed
+    }//GEN-LAST:event_BotonConsultarPerifericosActionPerformed
 
-    private void BotonConsultarCancionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonConsultarCancionesActionPerformed
+    private void BotonConsultarComponentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonConsultarComponentesActionPerformed
         salidaConsultasTexto.setText(gestor.consultaComponentes());
         salidaConsultas.setVisible(true);
-    }//GEN-LAST:event_BotonConsultarCancionesActionPerformed
+    }//GEN-LAST:event_BotonConsultarComponentesActionPerformed
 
     private void BotonInsertarPerifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonInsertarPerifActionPerformed
+        //Creamos un String para que lea la informacion del ComboBox.
         String idPerif = (String)InsertarDatosPerif.getSelectedItem();
+        //Convertiremos el String a integer y separaremos con un Split y seleccionamos la primera parte con [0] que es el numero de la marca.
         int idPerifericos = Integer.parseInt(idPerif.split(" ")[0]);
         gestor.insertarPerifericos(monitorField.getText(), TecladoField.getText(), RatonField.getText(), AuricularesField.getText(), idPerifericos);
     }//GEN-LAST:event_BotonInsertarPerifActionPerformed
 
     private void PreparedPerifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PreparedPerifActionPerformed
-         String idPerifPrep = (String)ConsultaPerif.getSelectedItem();
+         //Creamos un String para que lea la informacion del ComboBox.
+        String idPerifPrep = (String)ConsultaPerif.getSelectedItem();
+        //Convertiremos el String a integer y separaremos con un Split y seleccionamos la primera parte con [0] que es el numero de la marca.
         int idPerifericosPrepared = Integer.parseInt(idPerifPrep.split(" ")[0]);
+        //Aqui volvemos a convertir de integer a String para que lo pueda leer el metodo.
         String idPerifPrepared=String.valueOf(idPerifericosPrepared);
         salidaConsultasTexto.setText(gestor.consulta_PerifericosMarca(idPerifPrepared));
         salidaConsultas.setVisible(true);
     }//GEN-LAST:event_PreparedPerifActionPerformed
 
     private void PreparedCompActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PreparedCompActionPerformed
-       String idCompPrep = (String)ConsultaComp.getSelectedItem();
+         //Creamos un String para que lea la informacion del ComboBox.
+        String idCompPrep = (String)ConsultaComp.getSelectedItem();
+        //Convertiremos el String a integer y separaremos con un Split y seleccionamos la primera parte con [0] que es el numero de la marca.
         int idComponentesPrepared = Integer.parseInt(idCompPrep.split(" ")[0]);
+        //Aqui volvemos a convertir de integer a String para que lo pueda leer el metodo.
         String idCompPrepared=String.valueOf(idComponentesPrepared);
         salidaConsultasTexto.setText(gestor.consulta_ComponentesMarca(idCompPrepared));
         salidaConsultas.setVisible(true);
     }//GEN-LAST:event_PreparedCompActionPerformed
 
-    private void BotonModificarAlbumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonModificarAlbumActionPerformed
-        gestor.modificarCancion(modificarCancionNombre.getText(), modificarCancionAutor.getText());
-    }//GEN-LAST:event_BotonModificarAlbumActionPerformed
+    private void BotonModificarTorreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonModificarTorreActionPerformed
+        //Creamos un String para que lea la informacion del ComboBox.
+        String idTorre = (String)TorreCombo.getSelectedItem();
+        //Convertiremos el String a integer y separaremos con un Split y seleccionamos la primera parte con [0] que es el numero de la marca.  
+        int idTorreModificar = Integer.parseInt(idTorre.split(" ")[0]);
+        gestor.modificarTorre(nuevaTorreField.getText(), idTorreModificar);
+    }//GEN-LAST:event_BotonModificarTorreActionPerformed
+
+    private void BotonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEliminarActionPerformed
+        //Creamos un String para que lea la informacion del ComboBox.
+        String idBorrar = (String)BorrarCombo.getSelectedItem();
+        //Convertiremos el String a integer y separaremos con un Split y seleccionamos la primera parte con [0] que es el numero de la marca.
+        int idBorrarMarca = Integer.parseInt(idBorrar.split(" ")[0]);
+        gestor.deletearConCommit(idBorrarMarca);
+    }//GEN-LAST:event_BotonEliminarActionPerformed
 
     
     private void fillComboComp(){
     
-    
+    //Creamos un ArrayList
     ArrayList<String> list = new ArrayList<String>();
+    //Al valor del ArrayList lo declaramos llamando al metodo de GestorConexion.
     list = gestor.comboComp();
-    
+        
+    //Creamos un bucle for para lea los datos de la tabla marcas.
         for (int i = 0; i < list.size(); i++) {
             InsertarDatosComp.addItem(list.get(i));
             InsertarDatosPerif.addItem(list.get(i));
             ConsultaPerif.addItem(list.get(i));
             ConsultaComp.addItem(list.get(i));
+            TorreCombo.addItem(list.get(i));
+            BorrarCombo.addItem(list.get(i));
         }
     
     
@@ -989,13 +1061,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField AuricularesField;
+    private javax.swing.JComboBox<String> BorrarCombo;
     private javax.swing.JButton BotonApagar;
-    private javax.swing.JButton BotonConsultarAlbum;
-    private javax.swing.JButton BotonConsultarCanciones;
+    private javax.swing.JButton BotonConsultarComponentes;
+    private javax.swing.JButton BotonConsultarPerifericos;
+    private javax.swing.JButton BotonEliminar;
     private javax.swing.JButton BotonEncender;
     private javax.swing.JButton BotonInsertarComp;
     private javax.swing.JButton BotonInsertarPerif;
-    private javax.swing.JButton BotonModificarAlbum;
+    private javax.swing.JButton BotonModificarTorre;
     private javax.swing.JComboBox<String> ConsultaComp;
     private javax.swing.JComboBox<String> ConsultaPerif;
     private javax.swing.JTextField DisipadorField;
@@ -1018,23 +1092,25 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField ProcesadorField;
     private javax.swing.JTextField RatonField;
     private javax.swing.JTextField TecladoField;
+    private javax.swing.JComboBox<String> TorreCombo;
     private javax.swing.JTextField TorreField;
+    private javax.swing.JLabel borrarMarcaLabel;
     private javax.swing.JLabel consultaMarcasComp;
     private javax.swing.JLabel consultaMarcasPerif;
     private javax.swing.JLabel consultarDatos;
-    private javax.swing.JLabel consultarDatos1;
     private javax.swing.JLabel consultarDatosPerif;
     private javax.swing.JToggleButton darkMode;
+    private javax.swing.JLabel eliminarPorMarca;
     private javax.swing.JPanel fondoColor;
     private javax.swing.JLabel insertarDatosComponentes;
     private javax.swing.JLabel insertarDatosPerifericos;
     private javax.swing.JLabel insertarMonitor;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel modificarAlbumLabel;
-    private javax.swing.JLabel modificarCancion;
-    private javax.swing.JTextField modificarCancionAutor;
-    private javax.swing.JTextField modificarCancionNombre;
+    private javax.swing.JLabel modificarTorreLabel;
+    private javax.swing.JLabel modificarTorreMarcaLabel;
+    private javax.swing.JLabel modificarTorreNueva;
     private javax.swing.JTextField monitorField;
+    private javax.swing.JTextField nuevaTorreField;
     private javax.swing.JDialog salidaConsultas;
     private javax.swing.JTextArea salidaConsultasTexto;
     // End of variables declaration//GEN-END:variables
