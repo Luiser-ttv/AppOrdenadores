@@ -804,6 +804,32 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             BotonEliminar.setBackground(java.awt.Color.white);
             BotonEliminar.setForeground(java.awt.Color.black);
             
+            LabelComboInsComp.setForeground(java.awt.Color.black);
+            
+            InsertarGrafica.setForeground(java.awt.Color.black);
+            
+            InsertarTorre.setForeground(java.awt.Color.black);
+            
+            LabelComboInsPerif.setForeground(java.awt.Color.black);
+            
+            InsertarAuriculares.setForeground(java.awt.Color.black);
+            
+            borrarMarcaLabel.setForeground(java.awt.Color.black);
+            
+            ConsultaComp.setBackground(java.awt.Color.white);
+            ConsultaComp.setForeground(java.awt.Color.black);
+            
+            ConsultaPerif.setBackground(java.awt.Color.white);
+            ConsultaPerif.setForeground(java.awt.Color.black);
+            
+            TorreCombo.setBackground(java.awt.Color.white);
+            TorreCombo.setForeground(java.awt.Color.black);
+            
+            BorrarCombo.setBackground(java.awt.Color.white);
+            BorrarCombo.setForeground(java.awt.Color.black);
+            
+            eliminarPorMarca.setBackground(java.awt.Color.white);
+            eliminarPorMarca.setForeground(java.awt.Color.black);
             
         } else {
             
@@ -932,6 +958,34 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             
             BotonEliminar.setBackground(java.awt.Color.darkGray);
             BotonEliminar.setForeground(java.awt.Color.lightGray);
+            
+            LabelComboInsComp.setForeground(java.awt.Color.lightGray);
+            
+            InsertarGrafica.setForeground(java.awt.Color.lightGray);
+            
+            InsertarTorre.setForeground(java.awt.Color.lightGray);
+            
+            LabelComboInsPerif.setForeground(java.awt.Color.lightGray);
+            
+            InsertarAuriculares.setForeground(java.awt.Color.lightGray);
+            
+            borrarMarcaLabel.setForeground(java.awt.Color.lightGray);
+            
+            ConsultaComp.setBackground(java.awt.Color.darkGray);
+            ConsultaComp.setForeground(java.awt.Color.lightGray);
+            
+            ConsultaPerif.setBackground(java.awt.Color.darkGray);
+            ConsultaPerif.setForeground(java.awt.Color.lightGray);
+            
+            TorreCombo.setBackground(java.awt.Color.darkGray);
+            TorreCombo.setForeground(java.awt.Color.lightGray);
+            
+            BorrarCombo.setBackground(java.awt.Color.darkGray);
+            BorrarCombo.setForeground(java.awt.Color.lightGray);
+            
+            eliminarPorMarca.setBackground(java.awt.Color.darkGray);
+            eliminarPorMarca.setForeground(java.awt.Color.lightGray);
+                    
         }
     }//GEN-LAST:event_darkModeMousePressed
 
